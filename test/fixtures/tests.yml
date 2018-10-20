@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  type: 
+  level: 1
+  status: false
+
+two:
+  title: MyString
+  type: 
+  level: 1
+  status: false
