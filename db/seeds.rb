@@ -8,8 +8,8 @@
 User.delete_all
 Category.delete_all
 Test.delete_all
-# Question.delete_all
-# Answer.delete_all
+Question.delete_all
+Answer.delete_all
 # . . .
 User.create!(
   [{name: "Vasia",
@@ -54,3 +54,30 @@ Test.create!(
     level: 2,
     category_id: 3}]
 )
+Question.create!(
+  [{description: "Двигатель бывает дизельный?",
+    test_id: 1},
+   {description: "Двигатель бывает молочный?",
+    test_id: 1},
+   {description: "Руль находится спереди?",
+    test_id: 2},
+   {description: "Колёса бывают квадратные?",
+    test_id: 2},
+   {description: "Шайба круглая?",
+    test_id: 4},
+   {description: "Хокеист играет в кроссовках?",
+    test_id: 4},
+   {description: "Шашлык итальянское блюдо?",
+    test_id: 6},
+   {description: "Пицца итальянское блюдо?",
+    test_id: 6},
+   {description: "Мяч бывает треугольный?",
+    test_id: 3},
+   {description: "Футболист играет в кроссовках?",
+    test_id: 3},
+   {description: "Борщ французское блюдо?",
+    test_id: 5},
+   {description: "Круасаны французское блюдо?",
+    test_id: 5}]
+)
+Answer.create!

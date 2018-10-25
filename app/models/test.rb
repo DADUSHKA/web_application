@@ -1,8 +1,10 @@
 class Test < ApplicationRecord
 
-  def self.tests_of_certain_categories(name_category)
-    self.where(category_id: Category.where(title: name_category)
-               .ids).order('id DESC').pluck(:title)
-  end
+  has_many :questions
+  has_many :user, through: :questions
+  belongs_to :category
 
+  def self.tests_of_certain_categories(category_name)
+    joins(:category).where(categories: { title: category_name }).pluck(:title)
+  end
 end
