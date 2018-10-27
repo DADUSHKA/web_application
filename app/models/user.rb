@@ -1,10 +1,9 @@
 class User < ApplicationRecord
 
-  has_many :questions
-  has_many :test, through: :questions
+  has_and_belongs_to_many :tests
 
   def list_of_user_tests_by_difficulty(value)
-    Test.where(level: value).pluck(:title).join("' , '")
+    tests.where(level: value)
   end
 
 end
