@@ -5,3 +5,92 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.delete_all
+Category.delete_all
+Test.delete_all
+Question.delete_all
+Answer.delete_all
+# . . .
+User.create!(
+  [{name: "Vasia",
+    login_status: "user",
+    email: "mail@mail.com",
+    password: "qwerty"},
+   {name: "Pit",
+    login_status: "user",
+    email: "mail@mail.ru",
+    password: "12345"},
+   {name: "Bob",
+    login_status: "admin",
+    email: "bob@mail.com",
+    password: "afdfe333f"},
+   {name: "Sandy",
+    login_status: "user",
+    email: "sandy@mail.com",
+    password: "q3we9rty"}]
+)
+categories = Category.create!(
+  [{title: "Sport"},
+   {title: "Avto"},
+   {title: "Food"}]
+)
+tests = Test.create!(
+  [{title: "Engine knowledge",
+    level: 1,
+    category: categories[1]},
+   {title: "Driving knowledge",
+    level: 2,
+    category: categories[1]},
+   {title: "Fotbol knowledge",
+    level: 1,
+    category: categories[0]},
+   {title: "Hokey knowledge",
+    level: 2,
+    category: categories[0]},
+   {title: "Knowledge of french cuisine",
+    level: 1,
+    category: categories[2]},
+   {title: "Knowledge of italiano cuisine",
+    level: 2,
+    category: categories[2]}]
+)
+questions = Question.create!(
+  [{description: "Двигатель бывает дизельный?",
+    test: tests[0]},
+   {description: "Двигатель бывает молочный?",
+    test: tests[0]},
+   {description: "Руль находится спереди?",
+    test: tests[1]},
+   {description: "Колёса бывают квадратные?",
+    test: tests[1]},
+   {description: "Шайба круглая?",
+    test: tests[2]},
+   {description: "Хокеист играет в кроссовках?",
+    test: tests[2]},
+   {description: "Шашлык итальянское блюдо?",
+    test: tests[3]},
+   {description: "Пицца итальянское блюдо?",
+    test: tests[3]},
+   {description: "Мяч бывает треугольный?",
+    test: tests[4]},
+   {description: "Футболист играет в кроссовках?",
+    test: tests[4]},
+   {description: "Борщ французское блюдо?",
+    test: tests[5]},
+   {description: "Круасаны французское блюдо?",
+    test: tests[5]}]
+)
+Answer.create!(
+  [{question: questions[0]},
+   {question: questions[1]},
+   {question: questions[2]},
+   {question: questions[3]},
+   {question: questions[4]},
+   {question: questions[5]},
+   {question: questions[6]},
+   {question: questions[7]},
+   {question: questions[8]},
+   {question: questions[9]},
+   {question: questions[10]},
+   {question: questions[11]}]
+)
