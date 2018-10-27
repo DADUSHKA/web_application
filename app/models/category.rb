@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  has_one :tests
+  has_many :tests
 end

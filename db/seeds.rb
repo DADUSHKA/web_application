@@ -34,7 +34,7 @@ categories = Category.create!(
    {title: "Avto"},
    {title: "Food"}]
 )
-Test.create!(
+tests = Test.create!(
   [{title: "Engine knowledge",
     level: 1,
     category: categories[1]},
@@ -54,30 +54,43 @@ Test.create!(
     level: 2,
     category: categories[2]}]
 )
-Question.create!(
+questions = Question.create!(
   [{description: "Двигатель бывает дизельный?",
-    test_id: 1},
+    test: tests[0]},
    {description: "Двигатель бывает молочный?",
-    test_id: 1},
+    test: tests[0]},
    {description: "Руль находится спереди?",
-    test_id: 2},
+    test: tests[1]},
    {description: "Колёса бывают квадратные?",
-    test_id: 2},
+    test: tests[1]},
    {description: "Шайба круглая?",
-    test_id: 4},
+    test: tests[2]},
    {description: "Хокеист играет в кроссовках?",
-    test_id: 4},
+    test: tests[2]},
    {description: "Шашлык итальянское блюдо?",
-    test_id: 6},
+    test: tests[3]},
    {description: "Пицца итальянское блюдо?",
-    test_id: 6},
+    test: tests[3]},
    {description: "Мяч бывает треугольный?",
-    test_id: 3},
+    test: tests[4]},
    {description: "Футболист играет в кроссовках?",
-    test_id: 3},
+    test: tests[4]},
    {description: "Борщ французское блюдо?",
-    test_id: 5},
+    test: tests[5]},
    {description: "Круасаны французское блюдо?",
-    test_id: 5}]
+    test: tests[5]}]
 )
-Answer.create!
+Answer.create!(
+  [{question: questions[0]},
+   {question: questions[1]},
+   {question: questions[2]},
+   {question: questions[3]},
+   {question: questions[4]},
+   {question: questions[5]},
+   {question: questions[6]},
+   {question: questions[7]},
+   {question: questions[8]},
+   {question: questions[9]},
+   {question: questions[10]},
+   {question: questions[11]}]
+)
