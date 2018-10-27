@@ -29,7 +29,7 @@ User.create!(
     email: "sandy@mail.com",
     password: "q3we9rty"}]
 )
-Category.create!(
+categories = Category.create!(
   [{title: "Sport"},
    {title: "Avto"},
    {title: "Food"}]
@@ -37,22 +37,22 @@ Category.create!(
 Test.create!(
   [{title: "Engine knowledge",
     level: 1,
-    category_id: 2},
+    category: categories[1]},
    {title: "Driving knowledge",
     level: 2,
-    category_id: 2},
+    category: categories[1]},
    {title: "Fotbol knowledge",
     level: 1,
-    category_id: 1},
+    category: categories[0]},
    {title: "Hokey knowledge",
     level: 2,
-    category_id: 1},
+    category: categories[0]},
    {title: "Knowledge of french cuisine",
     level: 1,
-    category_id: 3},
+    category: categories[2]},
    {title: "Knowledge of italiano cuisine",
     level: 2,
-    category_id: 3}]
+    category: categories[2]}]
 )
 Question.create!(
   [{description: "Двигатель бывает дизельный?",
