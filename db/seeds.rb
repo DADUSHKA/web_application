@@ -47,7 +47,7 @@ tests = Test.create!(
     level: 1,author: users[0],
     category: categories[2]},
    {title: "Knowledge of italiano cuisine",
-    level: 2,author: users[0],
+    level: 2,author: users[1],
     category: categories[1]},]
 )
 questions = Question.create!(
