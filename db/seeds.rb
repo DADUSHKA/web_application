@@ -11,19 +11,19 @@ users = User.create!(
   [{name: "Vasia",
     login_status: "user",
     email: "mail@mail.com",
-     password: "qwerty"},
-    {name: "Pit",
-     login_status: "user",
-     email: "mail@mail.ru",
-     password: "12345"},
-    {name: "Bob",
-     login_status: "admin",
-     email: "bob@mail.com",
-     password: "afdfe333f"},
-    {name: "Sandy",
-     login_status: "user",
-     email: "sandy@mail.com",
-     password: "q3we9rty"}]
+    password: "qwerty"},
+   {name: "Pit",
+    login_status: "user",
+    email: "mail@mail.ru",
+    password: "12345"},
+   {name: "Bob",
+    login_status: "admin",
+    email: "bob@mail.com",
+    password: "afdfe333f"},
+   {name: "Sandy",
+    login_status: "user",
+    email: "sandy@mail.com",
+    password: "q3we9rty"}]
 )
 categories = Category.create!(
   [{title: "Sport"},
@@ -48,7 +48,7 @@ tests = Test.create!(
     category: categories[2]},
    {title: "Knowledge of italiano cuisine",
     level: 2,author: users[0],
-    category: categories[2]}]
+    category: categories[1]},]
 )
 questions = Question.create!(
   [{description: "Двигатель бывает дизельный?",
@@ -77,16 +77,16 @@ questions = Question.create!(
     test: tests[5]}]
 )
 Answer.create!(
-   [{question: questions[0]},
-    {question: questions[1]},
-    {question: questions[2]},
-    {question: questions[3]},
-    {question: questions[4]},
-    {question: questions[5]},
-    {question: questions[6]},
-    {question: questions[7]},
-    {question: questions[8]},
-    {question: questions[9]},
+  [{question: questions[0]},
+   {question: questions[1]},
+   {question: questions[2]},
+   {question: questions[3]},
+   {question: questions[4]},
+   {question: questions[5]},
+   {question: questions[6]},
+   {question: questions[7]},
+   {question: questions[8]},
+   {question: questions[9]},
    {question: questions[10]},
    {question: questions[11]}]
 )
