@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_30_182825) do
+ActiveRecord::Schema.define(version: 2018_11_01_070510) do
 
   create_table "answers", force: :cascade do |t|
-    t.boolean "correct", default: false
+    t.boolean "correct", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "question_id"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2018_10_30_182825) do
     t.string "password", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
