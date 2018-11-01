@@ -3,7 +3,6 @@ class CreateQuestions < ActiveRecord::Migration[5.2]
     create_table :questions do |t|
       t.string :category
       t.text :description
-
       t.timestamps
     end
   end

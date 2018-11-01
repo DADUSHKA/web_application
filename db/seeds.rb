@@ -5,13 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.delete_all
-Category.delete_all
-Test.delete_all
-Question.delete_all
-Answer.delete_all
+[User, Category, Test, Question, Answer].each(&:delete_all)
 # . . .
-User.create!(
+users = User.create!(
   [{name: "Vasia",
     login_status: "user",
     email: "mail@mail.com",
@@ -36,23 +32,23 @@ categories = Category.create!(
 )
 tests = Test.create!(
   [{title: "Engine knowledge",
-    level: 1,
+    level: 1,author: users[0],
     category: categories[1]},
    {title: "Driving knowledge",
-    level: 2,
+    level: 2,author: users[0],
     category: categories[1]},
    {title: "Fotbol knowledge",
-    level: 1,
+    level: 1,author: users[0],
     category: categories[0]},
    {title: "Hokey knowledge",
-    level: 2,
+    level: 2,author: users[0],
     category: categories[0]},
    {title: "Knowledge of french cuisine",
-    level: 1,
+    level: 1,author: users[0],
     category: categories[2]},
    {title: "Knowledge of italiano cuisine",
-    level: 2,
-    category: categories[2]}]
+    level: 2,author: users[1],
+    category: categories[1]},]
 )
 questions = Question.create!(
   [{description: "Двигатель бывает дизельный?",
@@ -93,4 +89,10 @@ Answer.create!(
    {question: questions[9]},
    {question: questions[10]},
    {question: questions[11]}]
+)
+TestsUser.create!(
+  [{user: users[1],test: tests[1],finality: true},
+   {user: users[2],test: tests[0],finality: true},
+   {user: users[1],test: tests[0],finality: false},
+   {user: users[1],test: tests[2],finality: true}]
 )
