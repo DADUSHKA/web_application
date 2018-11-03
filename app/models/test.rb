@@ -4,10 +4,10 @@ class Test < ApplicationRecord
     joins(:category).where(categories: { title: category_name })
     .order(created_at: :desc)
   end
-  scope :list_of_tests_by_difficulty, ->(value) { where(tests: { level: value }) }
-  scope :simple_tests, -> { where(level: 0..1) }
-  scope :medium_tests, -> { where(level: 2..4) }
-  scope :complicated_tests, -> { where(level: 5..1/0.0) }
+  scope :by_level, ->(value) { where(level: value) }
+  scope :simple_tests, -> { by_level(0..1) }
+  scope :medium_tests, -> { by_level(2..4) }
+  scope :complicated_tests, -> { by_level(5..1/0.0) }
 
   has_many :tests_users
   has_many :users, through: :tests_users
