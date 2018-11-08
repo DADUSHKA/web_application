@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   before_save { self.email = email.downcase }
 
-  has_secure_password
+
   has_many :tests_users
   has_many :tests, through: :tests_users
   has_many :author_tests, class_name: 'Test', foreign_key: "author_id"
@@ -12,6 +12,6 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 },
     format: { with: VALID_EMAIL_REGEX },
     uniqueness: { case_sensitive: false }
-  validates :password, presence: true, length: { minimum: 7 }
+  validates :password, presence: true, length: { minimum: 2 }
 
 end
