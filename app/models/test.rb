@@ -1,6 +1,6 @@
 class Test < ApplicationRecord
 
-  scope :tests_of_certain_categories, ->(category_name) do
+  scope :by_category, ->(category_name) do
     joins(:category).where(categories: { title: category_name })
     .order(created_at: :desc)
   end
