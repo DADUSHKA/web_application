@@ -1,8 +1,10 @@
 class User < ApplicationRecord
+
+  scope :user_on_test, ->(test_title) { find(test_title) }
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   before_save { self.email = email.downcase }
-
 
   has_many :tests_users
   has_many :tests, through: :tests_users

@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :set_test, only: [:new, :create]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_from_question_not_found
+  # rescue_from ActiveRecord::RecordNotFound, with: :rescue_from_question_not_found
 
   def index
     @questions = Question.all
@@ -21,10 +21,8 @@ class QuestionsController < ApplicationController
   end
 
   def show
-
     render inlain: "<h1><%= @question.description  %></h1> \n
       <p><%= link_to 'Back', test_questions_path(:test) %></p> ".html_safe
-
   end
 
   def new

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TestGuru</title>
+    <title>EducationalApplication</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="container_body">
+        <%= yield %>
+      <div id="footer">
+        &copy; Учебный проект в онлайншколе <a href="http://www.thinknetica.com/" target="_blank">    Thinknetica</a> | <%= output_current_year %>
+        <%= render "shared/footer", layout: false %>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,6 +1,7 @@
 class Category < ApplicationRecord
 
   default_scope { order(created_at: :desc) }
+  scope :category_on_test, ->(test_title) { find(test_title) }
 
   has_many :tests
 

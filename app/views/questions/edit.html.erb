@@ -1,6 +1,11 @@
-<h1>Editing Question</h1>
-
-<%= render 'form', question: @question %>
-
-<%= link_to 'Show', question_path %> |
-<%= link_to 'Back', test_questions_path(:test) %>
+<div id="container">
+  <div id="header">TestGuru</div>
+  <div id="sidebar">
+    <%= link_to 'Show', question_path %> |
+    <%= link_to 'Back', test_questions_path(@question) %>
+  </div>
+  <div id="content">
+    <h2>Editing  <%= question_header(@question.test_id).title %> Question</h2>
+    <%= render 'form', question: @question %>
+  </div>
+</div>

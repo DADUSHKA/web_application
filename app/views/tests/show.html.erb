@@ -1,0 +1,37 @@
+
+<div id="container">
+  <div id="header">TestGuru</div>
+  <div id="sidebar">
+    <%= link_to 'New Question', new_test_question_path(@test.id) %>
+    <%= link_to 'Edit', edit_test_path(@test) %> |
+    <%= link_to 'Back', tests_path %>
+  </div>
+  <div id="content">
+    <h2>Show <%= @test.title %> test</h2>
+    <p>
+      <strong>Id:</strong>
+      <%= @test.id %>
+    </p>
+    <p>
+      <strong>Test:</strong>
+      <%= @test.title %>
+    </p>
+    <p>
+      <strong>Level:</strong>
+      <%= level_test(@test) %>
+    </p>
+    <p>
+      <strong>Authir:</strong>
+      <%= user_name(@test) %>
+    </p>
+    <p>
+      <strong>Category:</strong>
+      <%= category_name(@test) %>
+    </p>
+    <p>
+      <strong>Total questions:</strong>
+      <%= total_questions(@test.title) %>
+    </p>
+  </div>
+</div>
+
