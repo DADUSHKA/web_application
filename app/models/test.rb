@@ -1,11 +1,11 @@
 class Test < ApplicationRecord
 
-  scope :question_head, ->(value) { find(value) }
+  scope :question_header, ->(instance_id) { find(instance_id) }
   scope :by_category, ->(category_name) do
     joins(:category).where(categories: { title: category_name })
     .order(created_at: :desc)
   end
-  scope :by_level, ->(value) { where(level: value) }
+  scope :by_level, ->(namber) { where(level: namber) }
   scope :simple_tests, -> { by_level(0..1) }
   scope :medium_tests, -> { by_level(2..4) }
   scope :complicated_tests, -> { by_level(5..1/0.0) }

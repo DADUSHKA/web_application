@@ -22,15 +22,17 @@
     </p>
     <p>
       <strong>Authir:</strong>
-      <%= user_name(@test) %>
+      <%= @test.author.name %>
     </p>
     <p>
       <strong>Category:</strong>
-      <%= category_name(@test) %>
+      <%= @test.category.title %>
     </p>
     <p>
       <strong>Total questions:</strong>
-      <%= total_questions(@test.title) %>
+      <ul><li>
+      <%= total_questions %>
+      </li></ul>
     </p>
   </div>
 </div>

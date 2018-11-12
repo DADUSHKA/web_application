@@ -5,24 +5,16 @@ module TestsHelper
     TEST_LEVELS[test.level] || :hero
   end
 
-  def question_header(value)
-    Test.question_head(value)
+  def question_header(instance_id)
+    Test.question_header(instance_id)
   end
 
-  def total_questions(test_title)
+  def total_questions
     var = []
-    Question.by_test(test_title).each do |resource|
+    @test.questions.each do |resource|
       var << resource.description
     end
     var.join(' , ')
-  end
-
-  def user_name(value)
-    User.user_on_test(value.author_id).name
-  end
-
-  def category_name(value)
-    Category.category_on_test(value.category_id).title
   end
 
 end
