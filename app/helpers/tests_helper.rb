@@ -6,7 +6,7 @@ module TestsHelper
   end
 
   def question_header(instance_id)
-    Test.question_header(instance_id)
+    Test.question_header(instance_id).title
   end
 
   def total_questions
