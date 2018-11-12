@@ -5,7 +5,7 @@ class Test < ApplicationRecord
     joins(:category).where(categories: { title: category_name })
     .order(created_at: :desc)
   end
-  scope :by_level, ->(namber) { where(level: namber) }
+  scope :by_level, ->(number) { where(level: number) }
   scope :simple_tests, -> { by_level(0..1) }
   scope :medium_tests, -> { by_level(2..4) }
   scope :complicated_tests, -> { by_level(5..1/0.0) }
