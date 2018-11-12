@@ -1,8 +1,9 @@
 <div id="container">
   <div id="header">TestGuru</div>
   <div id="sidebar">
-    <%= link_to 'Edit', edit_question_path(@question) %> |
-    <%= link_to 'Back', test_questions_path(@question) %>
+    <%= link_to 'Edit', edit_question_path(@question) %><br><br>
+    <%= link_to 'Back to test', test_path %><br><br>
+    <%= link_to 'Back to questions', test_questions_path(@question) %>
   </div>
   <div id="content">
   <h2>Show <%= @question.test.title %>  Question </h2>

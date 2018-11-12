@@ -29,10 +29,8 @@
       <%= @test.category.title %>
     </p>
     <p>
-      <strong>Total questions:</strong>
-      <ul><li>
-      <%= total_questions %>
-      </li></ul>
+      <strong>All test questions:</strong>
+      <%= render 'all_test_questions', test: @test %>
     </p>
   </div>
 </div>

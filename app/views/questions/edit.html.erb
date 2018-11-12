@@ -5,7 +5,7 @@
     <%= link_to 'Back', test_questions_path(@question) %>
   </div>
   <div id="content">
-    <h2>Editing  <%= question_header(@question.test_id) %> Question</h2>
+    <h2>Editing  <%= @question.test.title %> Question</h2>
     <%= render 'form', question: @question %>
   </div>
 </div>

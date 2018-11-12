@@ -1,0 +1,7 @@
+<table>
+    <% all_test_questions(test).each do |question| %>
+      <tr>
+        <td><%= link_to question, question_path(test.id) %></td>
+      </tr>
+    <% end %>
+</table>
