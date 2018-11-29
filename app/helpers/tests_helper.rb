@@ -5,16 +5,8 @@ module TestsHelper
     TEST_LEVELS[test.level] || :hero
   end
 
-  def question_header(instance)
-    Test.question_header(instance.id).title
-  end
-
-  def all_test_questions(instance)
-    var = []
-    instance.questions.each do |resource|
-      var << resource.description
-    end
-    var
-  end
+  # def all_test_questions(test)
+  #   test.questions.pluck(:description)
+  # end
 
 end
