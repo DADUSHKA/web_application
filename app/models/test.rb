@@ -1,6 +1,6 @@
 class Test < ApplicationRecord
 
-  scope :question_header, ->(instance_id) { find(instance_id) }
+  # scope :question_header, ->(instance_id) { find(instance_id) }
   scope :by_category, ->(category_name) do
     joins(:category).where(categories: { title: category_name })
     .order(created_at: :desc)

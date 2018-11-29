@@ -5,10 +5,6 @@ class QuestionsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_from_question_not_found
 
-  def index
-    @questions = Question.all
-  end
-
   def edit
   end
 
@@ -21,8 +17,6 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    render inlain: "<h1><%= @question.description  %></h1> \n
-      <p><%= link_to 'Back', test_questions_path(:test) %></p> ".html_safe
   end
 
   def new

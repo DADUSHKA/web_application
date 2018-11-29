@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def github_url(title, login, repo)
-    link_to title, "https://github.com/" + login + "/" + repo, target: :_blank
+    link_to title, "https://github.com/#{login}/#{repo}", target: :_blank
   end
 
   def thinknetica_url
