@@ -4,7 +4,7 @@ module QuestionsHelper
     if instance.new_record?
       "Create New #{@test.title} Question"
     else
-      "Editing #{instance.test.title}  Question"
+      "Editing #{instance.test.title} Question"
     end
   end
 
