@@ -5,8 +5,4 @@ module TestsHelper
     TEST_LEVELS[test.level] || :hero
   end
 
-  # def all_test_questions(test)
-  #   test.questions.pluck(:description)
-  # end
-
 end
