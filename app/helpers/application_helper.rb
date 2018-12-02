@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-  def output_current_year
+  def current_year
     Time.current.year
   end
 
