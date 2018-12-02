@@ -14,3 +14,60 @@
  *= require_self
  */
 
+body {
+    font: 12pt Arial, Helvetica, sans-serif; /* Шрифт на веб-странице */
+    background: #e1dfb9; /* Цвет фона */
+   }
+   h2 {
+    font-size: 1.1em; /* Размер шрифта */
+    color: #800040; /* Цвет текста */
+    margin-top: 0; /* Отступ сверху */
+   }
+   #container {
+    width: 70%; /* Ширина слоя */
+    margin: 0 auto; /* Выравнивание по центру */
+    background: #727E7A; /* Цвет фона левой колонки */
+   }
+   #header {
+    font-size: 2.4em; /* Размер текста */
+    text-align: center; /* Выравнивание по центру */
+    padding: 5px; /* Отступы вокруг текста */
+    background: #8fa09b; /* Цвет фона шапки */
+    color: #ffe; /* Цвет текста */
+   }
+   #sidebar {
+    margin-top: 10px;
+    width: 110px; /* Ширина слоя */
+    padding: 0 10px; /* Отступы вокруг текста */
+    float: right; /* Обтекание по правому краю */
+   }
+   #sidebar_footer {
+    margin-top: 10px;
+    width: 400px; /* Ширина слоя */
+    padding: 0 10px; /* Отступы вокруг текста */
+    float: right; /* Обтекание по правому краю */
+   }
+   #content {
+    /*border: 3px double blue;*/
+    margin-right: 130px;
+    padding: 10px;
+    background: #fff;
+   }
+   #content_footer {
+    margin-right: 500px; /* Отступ слева */
+    padding: 10px; /* Поля вокруг текста */
+    background: #fff; /* Цвет фона правой колонки */
+   }
+   #footer {
+    width: 100%;
+    /*border: 3px double blue;*/
+    position: absolute;
+    bottom: 15px;
+    background: #8fa09b; /* Цвет фона подвала */
+    color: #fff; /* Цвет текста */
+    padding: 5px; /* Отступы вокруг текста */
+    clear: left; /* Отменяем действие float */
+   }
+   li {
+    color: #800040;
+   }

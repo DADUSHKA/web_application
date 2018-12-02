@@ -1,11 +1,10 @@
 <div id="container">
   <div id="header">TestGuru</div>
   <div id="sidebar">
-    <%= link_to 'Show', question_path %> |
     <%= link_to 'Back', tests_path %>
   </div>
   <div id="content">
-    <h2><%= question_header(@question) %></h2>
-    <%= render 'form', question: @question %>
+  <h2>Create New Test</h2>
+    <%= render 'form', test: @test %>
   </div>
 </div>

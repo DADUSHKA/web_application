@@ -1,0 +1,20 @@
+<div id="container">
+  <div id="header">TestGuru</div>
+  <div id="sidebar">
+    <%= link_to 'New tests', new_test_path %>
+  </div>
+  <div id="content">
+    <h2>Tricky Tests</h2>
+    <table>
+    <tr>
+      <th>Title</th>
+      <th>Level</th>
+      <th>Author</th>
+      <th>Category</th>
+      <th>Total questions</th>
+    <th colspan="3">Actions</th>
+    </tr>
+    <%= render @tests %>
+    </table>
+  </div>
+</div>

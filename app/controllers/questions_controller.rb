@@ -5,10 +5,6 @@ class QuestionsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_from_question_not_found
 
-  def index
-    @questions = Question.all
-  end
-
   def edit
   end
 
@@ -21,10 +17,6 @@ class QuestionsController < ApplicationController
   end
 
   def show
-
-    render inlain: "<h1><%= @question.description  %></h1> \n
-      <p><%= link_to 'Back', test_questions_path(:test) %></p> ".html_safe
-
   end
 
   def new
@@ -34,7 +26,7 @@ class QuestionsController < ApplicationController
   def create
     @question = @test.questions.new(question_params)
     if @question.save
-      redirect_to test_questions_path(@test), notice: 'Question was successfully created.'
+      redirect_to test_path(@test), notice: 'Question was successfully created.'
     else
       render :new
     end
@@ -42,7 +34,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    redirect_to test_questions_path(@question.test), notice: 'Question was successfully destroyed.'
+    redirect_to tests_path, notice: 'Question was successfully destroyed.'
   end
 
 
@@ -58,7 +50,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:description)
+    params.require(:question).permit(:description, :test_id)
   end
 
   def rescue_from_question_not_found
