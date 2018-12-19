@@ -1,6 +1,7 @@
-class Answer < ApplicationRecord
+# frozen_string_literal: true
 
-  scope :right_answers, -> { where(correct: true) }
+class Answer < ApplicationRecord
+  scope :correct, -> { where(correct: true) }
 
   belongs_to :question
 
@@ -10,7 +11,7 @@ class Answer < ApplicationRecord
 
   def count_answers_on_question
     if question.answers.count >= 4
-      errors.add(:base, "One Question can have from 1 to 4 answers.")
+      errors.add(:base, 'One Question can have from 1 to 4 answers.')
     end
   end
 end

@@ -1,11 +1,12 @@
-<h1>Editing Answer</h1>
-
-<p>
-  <%= @answer.question.description %>
-</p>
-
-<%= render 'form', answer: @answer %>
-
-<%= link_to 'Show', @answer %> |
-<%= link_to 'Back', question_path(@answer.question) %>
-
+<div id="container">
+  <div id="header">TestGuru</div>
+  <div id="sidebar">
+    <%= link_to 'Show', @answer %> |
+    <%= link_to 'Back', question_path(@answer.question) %>
+  </div>
+  <div id="content">
+    <h1>Editing Answer</h1>
+    <h2><%= @answer.question.description %></h2>
+   <%= render 'form', answer: @answer %>
+  </div>
+</div>

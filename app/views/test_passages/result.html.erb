@@ -1,0 +1,18 @@
+
+<div id="container">
+  <div id="header">TestGuru</div>
+  <div id="sidebar">
+<%= link_to 'Back to tests', tests_path %>
+  </div>
+  <div id="content">
+  <h2><%= selection_message(@test_passage.test, @test_passage.correct_questions) %> </h2>
+    <p>
+    <h2>Test result:</h2>
+    <h1>
+      <font color="<%= selection_style(@test_passage.test, @test_passage.correct_questions) %>">
+<%= success_rate(@test_passage.test, @test_passage.correct_questions) %>%
+</font>
+    </h1>
+    </p>
+  </div>
+</div>

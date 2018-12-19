@@ -1,12 +1,12 @@
-class QuestionsController < ApplicationController
+# frozen_string_literal: true
 
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
-  before_action :set_test, only: [:new, :create]
+class QuestionsController < ApplicationController
+  before_action :set_question, only: %i[show edit update destroy]
+  before_action :set_test, only: %i[new create]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_from_question_not_found
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @question.update(question_params)
@@ -16,8 +16,7 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @question = Question.new
@@ -37,9 +36,7 @@ class QuestionsController < ApplicationController
     redirect_to tests_path, notice: 'Question was successfully destroyed.'
   end
 
-
   private
-
 
   def set_question
     @question = Question.find(params[:id])
@@ -54,7 +51,6 @@ class QuestionsController < ApplicationController
   end
 
   def rescue_from_question_not_found
-    render plain: "The question is not in the database."
+    render plain: 'The question is not in the database.'
   end
-
 end

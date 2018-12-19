@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AnswersController < ApplicationController
   before_action :find_question, only: %i[new create]
   before_action :set_answer, only: %i[show edit update destroy]
@@ -11,7 +13,7 @@ class AnswersController < ApplicationController
   def edit; end
 
   def create
-    @answer =  @question.answers.new(answer_params)
+    @answer = @question.answers.new(answer_params)
     if @answer.save
       redirect_to @answer
     else

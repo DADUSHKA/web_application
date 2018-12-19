@@ -1,5 +1,6 @@
-module QuestionsHelper
+# frozen_string_literal: true
 
+module QuestionsHelper
   def question_header(instance)
     if instance.new_record?
       "Create New #{@test.title} Question"
@@ -7,5 +8,4 @@ module QuestionsHelper
       "Editing #{instance.test.title} Question"
     end
   end
-
 end
