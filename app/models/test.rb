@@ -3,7 +3,8 @@
 class Test < ApplicationRecord
   # scope :question_header, ->(instance_id) { find(instance_id) }
   scope :by_category, ->(category_name) do
-    joins(:category).where(categories: { title: category_name }
+    joins(:category).where(categories: { title: category_name })
+
   end
   scope :by_level, ->(number) { where(level: number) }
   scope :simple_tests, -> { by_level(0..1) }

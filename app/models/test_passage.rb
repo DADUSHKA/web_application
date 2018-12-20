@@ -5,9 +5,7 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_first_question, on: :create
-  before_validation :before_validation_number_question
-  before_update :before_update_next_question
+  before_validation :before_validation_set_and_next_question
 
   def completed?
     question.nil?
@@ -18,14 +16,32 @@ class TestPassage < ApplicationRecord
     save!
   end
 
-  def number_question_next
-    question.id - before_validation_number_question
+  def success_rate
+    all_count_answers_correct = 0
+    user_count_answers_correct = correct_questions
+    test.questions.each do |i|
+      all_count_answers_correct += i.answers.correct.count
+    end
+    ((100.0 / all_count_answers_correct) * user_count_answers_correct).to_i
+  end
+
+  @@indicator = 0
+  def indicator_number_question
+    @@indicator += 1
+  end
+
+  def reset_indicator_number_question
+    @@indicator = 0
   end
 
   private
 
-  def before_validation_set_first_question
-    self.question = test.questions.first if test.present?
+  def before_validation_set_and_next_question
+    if question_id != nil
+      self.question = test.questions.order(:id).where('id > ?', question.id).first
+    else
+      self.question = test.questions.first
+    end
   end
 
   def correct_answer?(answer_ids)
@@ -38,12 +54,4 @@ class TestPassage < ApplicationRecord
     question.answers.correct
   end
 
-  def before_update_next_question
-    self.question = test.questions.order(:id).where('id > ?', question.id).first
-  end
-
-  def before_validation_number_question
-    question_namber = test.questions.first.id
-    question_namber - 1
-  end
 end
