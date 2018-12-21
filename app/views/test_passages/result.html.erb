@@ -12,9 +12,10 @@
       <h1>
         <font color="<%= selection_style %>">
           <%= @test_passage.success_rate %>%
+          <%  @test_passage.reset_user_count_answers_correct %>
         </font>
       </h1>
     </p>
   </div>
 </div>
-<%  @test_passage.reset_user_count_answers_correct %>
+

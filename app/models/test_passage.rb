@@ -53,7 +53,6 @@ class TestPassage < ApplicationRecord
     correct_answers_count = correct_answers.count
     (correct_answers_count == correct_answers.where(id: answer_ids).count) &&
       correct_answers_count == answer_ids.count
-      # @@user_count_answers_correct += answer_ids.count
   end
 
   def correct_answers
