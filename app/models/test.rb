@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Test < ApplicationRecord
-  # scope :question_header, ->(instance_id) { find(instance_id) }
   scope :by_category, ->(category_name) do
     joins(:category).where(categories: { title: category_name })
 

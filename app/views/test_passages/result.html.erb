@@ -6,13 +6,12 @@
     <%  @test_passage.reset_indicator_number_question %>
   </div>
   <div id="content">
-    <h2><%= selection_message %> </h2>
+    <h2><%= result_message %> </h2>
     <p>
       <h2>Test result:</h2>
       <h1>
         <font color="<%= selection_style %>">
           <%= @test_passage.success_rate %>%
-          <%  @test_passage.reset_user_count_answers_correct %>
         </font>
       </h1>
     </p>

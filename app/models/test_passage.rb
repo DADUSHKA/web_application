@@ -11,23 +11,17 @@ class TestPassage < ApplicationRecord
     question.nil?
   end
 
-  @@user_count_answers_correct = 0
   def accept!(answer_ids)
-    @@user_count_answers_correct += answer_ids.count if answer_ids.present?
-    self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.correct_questions += answer_ids.count if correct_answer?(answer_ids)
     save!
-  end
-
-  def reset_user_count_answers_correct
-    @@user_count_answers_correct = 0
   end
 
   def success_rate
     all_count_answers_correct = 0
-    test.questions.each do |i|
+    test.questions.answers_correct.each do |i|
       all_count_answers_correct += i.answers.correct.count
     end
-    ((100.0 / all_count_answers_correct) * @@user_count_answers_correct).to_i
+    ((100.0 / all_count_answers_correct) * correct_questions).to_i
   end
 
   @@indicator = 0
