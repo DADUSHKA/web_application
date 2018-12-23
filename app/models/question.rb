@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class Question < ApplicationRecord
-
-  scope :column_id, -> { select(:id) }
+ scope :test_questions, -> { all }
 
   has_many :answers
   belongs_to :test

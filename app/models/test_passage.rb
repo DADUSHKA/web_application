@@ -21,7 +21,7 @@ class TestPassage < ApplicationRecord
   end
 
   def indicator_number_question(test_passage)
-    test_passage.test.questions.column_id.index(self.question) + 1
+    test_passage.test.questions.test_questions.order(id: :asc).index(self.question) + 1
   end
 
   private
