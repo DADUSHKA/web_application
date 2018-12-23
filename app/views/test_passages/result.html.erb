@@ -3,14 +3,13 @@
   <div id="header">TestGuru</div>
   <div id="sidebar">
     <%= link_to 'Back to tests', tests_path %>
-    <%  @test_passage.reset_indicator_number_question %>
   </div>
   <div id="content">
-    <h2><%= result_message %> </h2>
+    <h2><%= result_message(@test_passage) %> </h2>
     <p>
       <h2>Test result:</h2>
       <h1>
-        <font color="<%= selection_style %>">
+        <font color="<%= selection_style(@test_passage) %>">
           <%= @test_passage.success_rate %>%
         </font>
       </h1>

@@ -2,7 +2,7 @@
   <div id="header">TestGuru</div>
   <div id="sidebar">
     <p>Number question</p>
-    <%=  @test_passage.indicator_number_question  %></br>
+    <%=  @test_passage.indicator_number_question(@test_passage)  %></br>
     <p>Count questions this test</p>
     <%=  @test_passage.test.questions.count %></br>
   </div>

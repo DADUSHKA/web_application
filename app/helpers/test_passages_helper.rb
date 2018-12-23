@@ -4,22 +4,19 @@ module TestPassagesHelper
 
   TEST_THRESHOLD = 85
 
-  def result_message
-    selection("The  #{@test_passage.test.title} Test was Completed.",
-              "The  #{@test_passage.test.title} Test no Completed.")
-  end
-
-  def selection_style
-    selection('green', 'red')
-  end
-
-  private
-
-  def selection(str_1, str_2)
-    if @test_passage.success_rate >= TEST_THRESHOLD
-      str_1
+  def result_message(test_passage)
+    if test_passage.success_rate >= TEST_THRESHOLD
+      "The  #{@test_passage.test.title} Test was Completed."
     else
-      str_2
+      "The  #{@test_passage.test.title} Test no Completed."
+    end
+  end
+
+  def selection_style(test_passage)
+    if test_passage.success_rate >= TEST_THRESHOLD
+      'green'
+    else
+      'red'
     end
   end
 

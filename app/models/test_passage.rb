@@ -12,25 +12,16 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    self.correct_questions += answer_ids.count if correct_answer?(answer_ids)
+    self.correct_questions += 1 if correct_answer?(answer_ids)
     save!
   end
 
   def success_rate
-    all_count_answers_correct = 0
-    test.questions.answers_correct.each do |i|
-      all_count_answers_correct += i.answers.correct.count
-    end
-    ((100.0 / all_count_answers_correct) * correct_questions).to_i
+    ((correct_questions.to_f / test.questions.count)*100).to_i
   end
 
-  @@indicator = 0
-  def indicator_number_question
-    @@indicator += 1
-  end
-
-  def reset_indicator_number_question
-    @@indicator = 0
+  def indicator_number_question(test_passage)
+    test_passage.test.questions.column_id.index(self.question) + 1
   end
 
   private
