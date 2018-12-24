@@ -3,7 +3,7 @@
 class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
-  belongs_to :question, class_name: 'Question', optional: true
+  belongs_to :question
 
   before_validation :before_validation_set_and_next_question
 
