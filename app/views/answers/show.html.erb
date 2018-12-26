@@ -1,0 +1,23 @@
+<div id="container">
+  <div id="header">TestGuru</div>
+  <div id="sidebar">
+<%= link_to 'Back', question_path(@answer.question) %>
+  </div>
+  <div id="content">
+  <h2>Question</h2>
+    <p>
+    <strong><%= @answer.question.description %></strong>
+
+    </p>
+    <p>
+    <strong>Answer:</strong>
+ <%= @answer.body %>
+    </p>
+    <p>
+    <strong>Correct:</strong>
+
+<%= @answer.correct %>
+
+    </p>
+  </div>
+</div>

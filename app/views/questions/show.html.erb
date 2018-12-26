@@ -2,7 +2,8 @@
   <div id="header">TestGuru</div>
   <div id="sidebar">
     <%= link_to 'Edit', edit_question_path(@question) %><br><br>
-    <%= link_to 'Back to test', tests_path %><br><br>
+    <%= link_to 'Back to test', test_path(@question.test) %><br><br>
+    <%= link_to "New answer", new_question_answer_path(@question) %>
   </div>
   <div id="content">
   <h2>Show <%= @question.test.title %>  Question </h2>
@@ -14,5 +15,13 @@
     <strong>Question:</strong>
     <%= @question.description %>
     </p>
+    <p>
+    <strong>Answer:</strong>
+    <ol>
+    <%= render @question.answers %>
+    </ol>
+    </p>
   </div>
 </div>
+
+
