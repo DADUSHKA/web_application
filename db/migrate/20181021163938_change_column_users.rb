@@ -2,6 +2,6 @@
 
 class ChangeColumnUsers < ActiveRecord::Migration[5.2]
   def change
-    rename_column :users, :status, :login_status
+    rename_column :users, :status, :admin_status
   end
 end

@@ -8,11 +8,23 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <div id="container_body">
+      <nav class="top-menu">
+        <ul class="menu-main">
+          <% if logged_in?  %>
+          Welcome
+          <li><%= link_to"#{current_user.name}", root_path %></li>
+          on TestGuru
+          <li><%= link_to 'Welcome', tests_path %></li>
+          <li><%= link_to 'Log out', session_path(session),
+             method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          <% else %>
+          <li><%= link_to 'Sign up', signup_path %></li>
+          <li><%= link_to 'Log in', login_path %></li>
+          <% end %>
+        </ul>
+      </nav>
         <%= yield %>
-        <%= render "shared/footer" %>
-    </div>
+        <%#= debug(params) if Rails.env.development? %>
   </body>
 </html>

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Test < ApplicationRecord
   scope :by_category, ->(category_name) do
     joins(:category).where(categories: { title: category_name })
