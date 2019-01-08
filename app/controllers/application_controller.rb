@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_user, :log_in, :logged_in?
+  add_flash_types :alert
 
   def redirect_back_or(default)
     redirect_to(session[:forwarding_url] || default)

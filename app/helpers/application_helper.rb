@@ -11,10 +11,4 @@ module ApplicationHelper
     link_to 'Thinknetica', 'http://www.thinknetica.com/', target: :_blank
   end
 
-  def information_messages
-    if flash[:alert]
-       content_tag :p, flash[:alert], class: 'flash alert'
-    end
-  end
-
 end
