@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module ApplicationHelper
   def current_year
     Time.current.year
@@ -12,4 +10,5 @@ module ApplicationHelper
   def thinknetica_url
     link_to 'Thinknetica', 'http://www.thinknetica.com/', target: :_blank
   end
+
 end

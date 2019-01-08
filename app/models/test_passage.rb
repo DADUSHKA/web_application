@@ -1,9 +1,7 @@
-# frozen_string_literal: true
-
 class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
-  belongs_to :question
+  belongs_to :question, optional: true
 
   before_validation :before_validation_set_and_next_question
 

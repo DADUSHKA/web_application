@@ -11,21 +11,21 @@
 # . . .
 users = User.create!(
   [{ name: 'Vasia',
-     login_status: 'user',
+     admin_status: true,
      email: 'mail@mail.com',
-     password: 'qwertywww' },
+     password_digest: 'qwertywww' },
    { name: 'Pit',
-     login_status: 'user',
+     admin_status: false,
      email: 'mail@mail.ru',
-     password: '12345wwww' },
+     password_digest: '12345wwww' },
    { name: 'Bob',
-     login_status: 'admin',
+     admin_status: false,
      email: 'bob@mail.com',
-     password: 'afdfe333f' },
+     password_digest: 'afdfe333f' },
    { name: 'Sandy',
-     login_status: 'user',
+     admin_status: false,
      email: 'sandy@mail.com',
-     password: 'q3we9rty' }]
+     password_digest: 'q3we9rty' }]
 )
 categories = Category.create!(
   [{ title: 'Sport' },
@@ -92,9 +92,9 @@ Answer.create!(
    { question: questions[10] },
    { question: questions[11] }]
 )
-TestsUser.create!(
-  [{ user: users[1], test: tests[1], finality: true },
-   { user: users[2], test: tests[0], finality: true },
-   { user: users[1], test: tests[0], finality: false },
-   { user: users[1], test: tests[2], finality: true }]
-)
+# TestsUser.create!(
+#   [{ user: users[1], test: tests[1], finality: true },
+#    { user: users[2], test: tests[0], finality: true },
+#    { user: users[1], test: tests[0], finality: false },
+#    { user: users[1], test: tests[2], finality: true }]
+# )
