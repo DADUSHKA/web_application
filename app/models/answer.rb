@@ -8,8 +8,6 @@ class Answer < ApplicationRecord
   private
 
   def count_answers_on_question
-    if question.answers.count >= 4
-      errors.add(:base, 'One Question can have from 1 to 4 answers.')
-    end
+    errors.add(:base, 'One Question can have from 1 to 4 answers.') if question.answers.count >= 4
   end
 end

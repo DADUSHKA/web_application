@@ -142,6 +142,9 @@ body {
 .flash.alert{
   border-color: #ef2727;
 }
+.flash.notice{
+  border-color: #3c85e0;
+}
 #error_explanation{
   border: 2px solid;
   border-color: #ef2727;

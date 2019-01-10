@@ -1,5 +1,5 @@
 class Question < ApplicationRecord
- scope :test_questions, -> { all }
+  scope :test_questions, -> { all }
 
   has_many :answers
   belongs_to :test
