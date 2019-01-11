@@ -9,9 +9,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-        <%= render "shared/menu" %>
+        <%= render "admin/menu" %>
         <%= render "shared/flash_message" %>
         <%= yield %>
-        <%#= debug(user_session) if Rails.env.development? %>
   </body>
 </html>

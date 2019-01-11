@@ -3,10 +3,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  resources :tests do
-    resources :questions, shallow: true, except: :index do
-      resources :answers, shallow: true, except: :index
-    end
+  resources :tests, only: %i[index start] do
     member do
       post :start
     end
@@ -15,6 +12,14 @@ Rails.application.routes.draw do
   resources :test_passages, only: %i[show update] do
     member do
       get :result
+    end
+  end
+
+  namespace :admin do
+    resources :tests, except: %i[start] do
+      resources :questions, shallow: true, except: :index do
+        resources :answers, shallow: true, except: :index
+      end
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

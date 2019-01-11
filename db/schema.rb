@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_190_110_181_132) do
+ActiveRecord::Schema.define(version: 20_190_110_213_655) do
   create_table 'answers', force: :cascade do |t|
     t.boolean 'correct', default: false
     t.datetime 'created_at', null: false
@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 20_190_110_181_132) do
   end
 
   create_table 'users', force: :cascade do |t|
-    t.string 'name', null: false
     t.boolean 'admin_status', default: false
     t.string 'email', default: '', null: false
     t.datetime 'created_at', null: false
@@ -77,6 +76,8 @@ ActiveRecord::Schema.define(version: 20_190_110_181_132) do
     t.datetime 'confirmed_at'
     t.datetime 'confirmation_sent_at'
     t.string 'unconfirmed_email'
+    t.string 'first_name', default: '', null: false
+    t.string 'last_name', default: '', null: false
     t.index ['confirmation_token'], name: 'index_users_on_confirmation_token', unique: true
     t.index ['email'], name: 'index_users_on_email', unique: true
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true

@@ -1,4 +1,4 @@
-<%= form_with model: test, local: true do |form| %>
+<%= form_with model: [:admin, @test], local: true do |form| %>
 <%= render "shared/errors", resource: @test %>
 <p>
     <%= form.label :title %><br>
@@ -7,10 +7,6 @@
 <p>
     <%= form.label :level %><br>
     <%= form.number_field :level, id: :test_level, only: ['new.html.erb'] %>
-</p>
-<p>
-    <%= form.label :author_id %><br>
-    <%= form.collection_select :author_id, User.all, :id, :name, prompt: true %>
 </p>
 <p>
     <%= form.label :category_id %><br>

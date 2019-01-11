@@ -73,10 +73,17 @@ body {
    }
 
   @import url('https://fonts.googleapis.com/css?family=Arimo');
-.top-menu {
-   /*background: rgba(255,255,255,.5);*/
+.top-menu-admin {
+   background: rgba(255,255,255,.5);
   box-shadow: 3px 0 7px rgba(0,0,0,.3);
-   /*padding: 20px;*/
+}
+.top-menu-admin:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.top-menu {
+  box-shadow: 3px 0 7px rgba(0,0,0,.3);
 }
 .top-menu:after {
   content: "";
@@ -85,6 +92,19 @@ body {
 }
 .navbar-logo {
   display: inline-block;
+}
+.menu-admin{
+  background: red;
+ list-style: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+.menu{
+ list-style: none;
+  margin: 0;
+  padding: 0;
+  float: left;
 }
 .menu-main {
   list-style: none;

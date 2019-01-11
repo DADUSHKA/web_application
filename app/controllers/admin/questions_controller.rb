@@ -1,5 +1,4 @@
-class QuestionsController < ApplicationController
-  before_action :authenticate_user!
+class Admin::QuestionsController < Admin::AdminController
   before_action :set_question, only: %i[show edit update destroy]
   before_action :set_test, only: %i[new create]
 
@@ -24,7 +23,7 @@ class QuestionsController < ApplicationController
   def create
     @question = @test.questions.new(question_params)
     if @question.save
-      redirect_to test_path(@test), notice: 'Question was successfully created.'
+      redirect_to admin_test_path(@test), notice: 'Question was successfully created.'
     else
       render :new
     end

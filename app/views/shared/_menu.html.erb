@@ -1,10 +1,10 @@
 <nav class="top-menu">
+  <ul class="menu"><h1>Welcome on aplication TestGuru</h1></ul>
   <ul class="menu-main">
+    <li></li>
     <% if user_signed_in?  %>
-    Welcome
-    <li><%= link_to"#{current_user.name}", root_path %></li>
-    on TestGuru
-    <li><%= link_to 'Welcome', tests_path %></li>
+    <li>Welcome <%= "#{current_user.first_name}""  ""#{current_user.last_name}" %></li>
+    <li><%= link_to 'Start Tests', tests_path %></li>
     <li><%= link_to 'Log out',  destroy_user_session_path(session),
         method: :delete, data: { confirm: 'Are you sure?' } %></li>
     <% else %>
