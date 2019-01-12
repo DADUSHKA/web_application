@@ -29,7 +29,7 @@ class Admin::AnswersController < Admin::AdminController
 
   def destroy
     @answer.destroy
-    redirect_to  admin_question_path(@answer)
+    redirect_to admin_question_path(@answer)
   end
 
   private
