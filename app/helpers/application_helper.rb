@@ -10,4 +10,5 @@ module ApplicationHelper
   def thinknetica_url
     link_to 'Thinknetica', 'http://www.thinknetica.com/', target: :_blank
   end
+
 end

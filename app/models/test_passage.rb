@@ -25,11 +25,12 @@ class TestPassage < ApplicationRecord
   private
 
   def before_validation_set_and_next_question
-    self.question = if !question_id.nil?
-                      test.questions.order(:id).where('id > ?', question.id).first
-                    else
-                      test.questions.first
-                    end
+    self.question =
+      if !question_id.nil?
+        test.questions.order(:id).where('id > ?', question.id).first
+      else
+        test.questions.first
+      end
   end
 
   def correct_answer?(answer_ids)
@@ -42,3 +43,4 @@ class TestPassage < ApplicationRecord
     question.answers.correct
   end
 end
+
