@@ -1,0 +1,34 @@
+ru:
+  hello: "Привет Мир!"
+
+  helpers:
+    label:
+      test:
+        title: 'Название'
+        level: 'Сложность'
+        category_id: 'Категория'
+
+  tests:
+      index:
+        header: 'Доступные Тесты'
+
+  shared:
+    menu:
+      welcome: 'Приветствую Вас в приложении TestGuru'
+      signup: 'Регистрация'
+      login: 'Вход'
+      start: 'Пройти тесты'
+      logout: 'Выйти'
+      sure: 'Вы уверены?'
+
+  admin:
+    menu:
+      admin_panel: 'Административная панель приложения TestGuru'
+      start: 'Пройти тесты'
+      logout: 'Выйти'
+      sure: 'Вы уверены?'
+    tests:
+      create:
+        successes: 'Тест успешно создан'
+      index:
+        header: 'Доступные Тесты'
