@@ -1,7 +1,7 @@
 class Test < ApplicationRecord
-  scope :by_category, lambda do |category_name|
+  scope :by_category, lambda { |category_name|
     joins(:category).where(categories: { title: category_name })
-  end
+  }
   scope :by_level, ->(number) { where(level: number) }
   scope :simple_tests, -> { by_level(0..1) }
   scope :medium_tests, -> { by_level(2..4) }

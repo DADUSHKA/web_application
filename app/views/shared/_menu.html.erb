@@ -1,15 +1,17 @@
 <nav class="top-menu">
-  <ul class="menu"><h1>Welcome on aplication TestGuru</h1></ul>
+  <ul class="menu"><h1><%= t('.welcome') %></h1></ul>
   <ul class="menu-main">
     <li></li>
     <% if user_signed_in?  %>
-      <li>Welcome <%= first_name %> <%= last_name %></li>
-      <li><%= link_to 'Start Tests', tests_path %></li>
-      <li><%= link_to 'Log out',  destroy_user_session_path(session),
-         method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <li><%= t('.welcome') %> <%= first_name %> <%= last_name %></li>
+      <li><%= link_to t('.start'), tests_path %></li>
+      <li><%= link_to t('.logout'),  destroy_user_session_path(session),
+         method: :delete, data: { confirm: t('.sure') } %></li>
     <% else %>
-      <li><%= link_to 'Sign up',  new_user_registration_path %></li>
-      <li><%= link_to 'Log in',  new_user_session_path %></li>
+      <li><%= link_to t('.signup'),  new_user_registration_path %></li>
+      <li><%= link_to t('.login'),  new_user_session_path %></li>
     <% end %>
+       <li><%= link_to 'En', { lang: :en } %></li>
+       <li><%= link_to 'Ru', { lang: :ru } %></li>
   </ul>
 </nav>

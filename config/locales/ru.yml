@@ -1,16 +1,58 @@
 ru:
   hello: "Привет Мир!"
 
+  devise:
+    confirmations:
+      new:
+        header: 'Отправка инструкции по подтверждению '
+        confirmation: 'Отправить инструкции по подтверждению'
+    sessions:
+      new:
+        remember_me: 'Запомнить меня'
+        password: 'Пароль'
+        login: 'Войти'
+        header: 'Вход в приложение TestGuru '
+    registrations:
+      new:
+        header: 'Станьте гуру!'
+        registr: 'Зарегистрироваться'
+        first_name: 'Имя'
+        last_name: 'Фамилия'
+        password: 'Пароль'
+        password_confirmation: 'Подтвердить пароль'
+        minimum: 'символов минимум'
+
+    shared:
+      links:
+        login: 'Вход'
+        welcome: 'Здравствуйте'
+        signup: 'Зарегистрироваться'
+        forgot: 'Забыли пароль?'
+        receive: 'Не получили инструкции по подтверждению?'
+        receive_unlock: 'Не получили инструкции по разблокировке?'
+
   helpers:
     label:
       test:
         title: 'Название'
         level: 'Сложность'
         category_id: 'Категория'
+      devise:
+        sessions:
+          new:
+            password: 'Пароль'
 
   tests:
       index:
         header: 'Доступные Тесты'
+        author: 'Автор'
+        title: 'Название'
+        level: 'Сложность'
+        category: 'Категория'
+        total_question: 'Количество вопросов'
+        adminpanel: 'Админпанель'
+      test:
+        start: 'Начать'
 
   shared:
     menu:
@@ -20,6 +62,7 @@ ru:
       start: 'Пройти тесты'
       logout: 'Выйти'
       sure: 'Вы уверены?'
+      welcome: 'Приветствую!'
 
   admin:
     menu:
@@ -27,8 +70,24 @@ ru:
       start: 'Пройти тесты'
       logout: 'Выйти'
       sure: 'Вы уверены?'
+      admin_welcome: 'Здравствуйте администратор:'
     tests:
       create:
         successes: 'Тест успешно создан'
       index:
+        author: 'Автор'
+        title: 'Название'
         header: 'Доступные Тесты'
+        level: 'Сложность'
+        category: 'Категория'
+        total_question: 'Количество вопросов'
+        actions: 'Действия'
+        new_test: 'Создать новый тест'
+      test:
+        delete: 'удалить'
+        show: 'просмотреть'
+        update: 'обновить'
+        sure: 'Вы уверены?'
+      show:
+
+
