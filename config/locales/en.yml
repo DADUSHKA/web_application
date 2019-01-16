@@ -1,12 +1,29 @@
 en:
   hello: "Hello world"
 
+  tests_mailer:
+    completed_test:
+      subject: 'You just completed the TestGuru test!'
+
+  test_passages:
+    result:
+      back: 'Back to tests'
+      result: 'Test result:'
+      header_was: "The %{title} Test was Completed."
+      header_no: "The %{title} Test no Completed."
+
+    show:
+      number: 'Number question'
+      count: 'Count questions this test'
+      next: 'Next'
+      header: 'Passing  %{title} the test '
+      question: 'Question:'
+
   shared:
     errors:
       header:
         one: '%{count} error detected'
         other: '%{count} errors detected'
-
 
   devise:
     confirmations:
@@ -29,7 +46,6 @@ en:
         password_confirmation: 'Password_confirmation'
         minimum: 'characters minimum'
 
-
   tests:
     index:
       header: 'TrickyTests'
@@ -40,7 +56,6 @@ en:
       title: 'Title'
     test:
       start: 'Start'
-
 
   helpers:
     label:
@@ -56,7 +71,6 @@ en:
         body: 'Description'
         correct: 'Yes'
 
-
   shared:
     menu:
       welcome: 'Welcome on aplication TestGuru'
@@ -67,9 +81,7 @@ en:
       sure: 'Are you sure?'
       welcome: 'Welcome!'
 
-
   admin:
-
     answers:
       create:
         success: 'Answer was successfully created.'
@@ -179,3 +191,11 @@ en:
         show: 'show'
         update: 'edit'
         sure: 'Are you sure?'
+      new:
+        back: 'Back'
+        header: 'Create New Test'
+      edit:
+        new: 'New Question'
+        show: 'Show'
+        back: 'Back'
+        title: 'Edit %{title} test'

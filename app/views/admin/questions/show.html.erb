@@ -9,16 +9,16 @@
   <h2><%= t('.header', title: @question.test.title) %></h2>
     <p>
     <strong>Id:</strong>
-    <%= @question.id %>
+      <%= @question.id %>
     </p>
     <p>
     <strong><%= t('.question') %></strong>
-    <%= @question.description %>
+      <%= @question.description %>
     </p>
     <p>
     <strong><%= t('.answer') %></strong>
     <ol>
-    <%= render @question.answers %>
+      <%= render @question.answers %>
     </ol>
     </p>
   </div>

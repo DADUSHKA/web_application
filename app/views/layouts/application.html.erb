@@ -12,8 +12,5 @@
         <%= render "shared/menu" %>
         <%= render "shared/flash_message" %>
         <%= yield %>
-        <%= debug(params[:lang]) if Rails.env.development? %>
-        <%= I18n.default_locale %>
-        <%= I18n.locale %>
   </body>
 </html>

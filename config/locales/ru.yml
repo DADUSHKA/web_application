@@ -1,6 +1,24 @@
 ru:
   hello: "Привет Мир!"
 
+  tests_mailer:
+    completed_test:
+      subject: 'Вы только что завершили TestGuru!'
+
+  test_passages:
+    result:
+      back: 'К тестам'
+      result: 'Результат прохождения теста:'
+      header_was: "Тест %{title} успешно пройден."
+      header_no: "Тест %{title} не пройден."
+
+    show:
+      number: 'Номер вопроса'
+      count: 'Количество вопросов в тесте'
+      next: 'Следующий'
+      header: 'Прохождение теста:  %{title}'
+      question: 'Вопрос:'
+
   shared:
     errors:
       header:
@@ -8,7 +26,6 @@ ru:
         many: 'Обнаружено %{count} ошибок'
         one: 'Обнаружена %{count} ошибка'
         other: 'Обнаружено %{count} ошибки'
-
 
   devise:
     confirmations:
@@ -40,7 +57,6 @@ ru:
         receive: 'Не получили инструкции по подтверждению?'
         receive_unlock: 'Не получили инструкции по разблокировке?'
 
-
   helpers:
     label:
       test:
@@ -56,7 +72,6 @@ ru:
         body: 'Описание'
         correct: 'Да'
 
-
   tests:
       index:
         header: 'Доступные Тесты'
@@ -69,7 +84,6 @@ ru:
       test:
         start: 'Начать'
 
-
   shared:
     menu:
       welcome: 'Приветствую Вас в приложении TestGuru'
@@ -80,9 +94,7 @@ ru:
       sure: 'Вы уверены?'
       welcome: 'Приветствую!'
 
-
   admin:
-
     answers:
       create:
         success: 'Вопрос успешно создан'
@@ -193,6 +205,14 @@ ru:
         show: 'просмотреть'
         update: 'обновить'
         sure: 'Вы уверены?'
+      new:
+        back: 'К тестам'
+        header: 'Создание нового теста'
+      edit:
+        new: 'Создать вопрос'
+        show: 'Смортеть тест'
+        back: 'К тестам'
+        title: 'Редактировать тест %{title}'
 
 
 

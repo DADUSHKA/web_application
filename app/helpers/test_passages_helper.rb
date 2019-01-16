@@ -3,9 +3,9 @@ module TestPassagesHelper
 
   def result_message(test_passage)
     if test_passage.success_rate >= TEST_THRESHOLD
-      "The  #{@test_passage.test.title} Test was Completed."
+      t('.header_was', title: test_passage.test.title)
     else
-      "The  #{@test_passage.test.title} Test no Completed."
+      t('.header_no', title: test_passage.test.title)
     end
   end
 
