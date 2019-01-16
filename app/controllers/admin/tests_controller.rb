@@ -19,7 +19,7 @@ class Admin::TestsController < Admin::AdminController
     @test = Test.new(test_params)
     @test.author_id = current_user.id
     if @test.save
-      redirect_to admin_test_path(@test), notice: t('.succsses')
+      redirect_to admin_test_path(@test), notice: t('.successes')
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Admin::TestsController < Admin::AdminController
 
   def update
     if @test.update(test_params)
-      redirect_to admin_test_path(@test), notice: 'Question was successfully updated.'
+      redirect_to admin_test_path(@test), notice: t('.successes')
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class Admin::TestsController < Admin::AdminController
 
   def destroy
     @test.destroy
-    redirect_to tests_path, notice: 'Question was successfully destroyed.'
+    redirect_to tests_path, notice: t('.successes')
   end
 
   def start

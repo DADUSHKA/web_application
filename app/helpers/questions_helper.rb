@@ -1,9 +1,9 @@
 module QuestionsHelper
   def question_header(instance)
     if instance.new_record?
-      "Create New #{@test.title} Question"
+      t('.header_create', title: @test.title)
     else
-      "Editing #{instance.test.title} Question"
+      t('.header_edit', title: instance.test.title)
     end
   end
 end

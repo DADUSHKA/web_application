@@ -1,11 +1,13 @@
 <div id="container">
   <div id="header">TestGuru</div>
   <div id="sidebar">
-    <%= link_to 'Show', admin_question_path %> |
-    <%= link_to 'Back', admin_tests_path %>
+    <%= link_to t('.show'), admin_question_path %>
+    <p></p>
+    <%= link_to t('.back'), admin_test_path %>
   </div>
   <div id="content">
     <h2><%= question_header(@question) %></h2>
     <%= render 'form', question: @question %>
   </div>
 </div>
+<%= debug(params) if Rails.env.development? %>

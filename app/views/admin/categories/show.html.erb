@@ -1,0 +1,20 @@
+<div id="container">
+  <div id="header">TestGuru</div>
+  <div id="sidebar">
+    <%= link_to t('.edit'), edit_admin_category_path(@category) %><br><br>
+    <%= link_to t('.back'), admin_tests_path %><br><br>
+  </div>
+  <div id="content">
+  <h2><%= t('.header') %></h2>
+    <p>
+    <strong>Id:</strong>
+    <%= @category.id %>
+    </p>
+    <p>
+    <strong><%= t('.title') %>:</strong>
+    <%= @category.title %>
+    </p>
+  </div>
+</div>
+
+

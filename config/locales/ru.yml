@@ -1,6 +1,15 @@
 ru:
   hello: "Привет Мир!"
 
+  shared:
+    errors:
+      header:
+        few: 'Обнаружено %{count} ошибки'
+        many: 'Обнаружено %{count} ошибок'
+        one: 'Обнаружена %{count} ошибка'
+        other: 'Обнаружено %{count} ошибки'
+
+
   devise:
     confirmations:
       new:
@@ -31,16 +40,22 @@ ru:
         receive: 'Не получили инструкции по подтверждению?'
         receive_unlock: 'Не получили инструкции по разблокировке?'
 
+
   helpers:
     label:
       test:
         title: 'Название'
         level: 'Сложность'
         category_id: 'Категория'
-      devise:
-        sessions:
-          new:
-            password: 'Пароль'
+      category:
+        title: 'Название'
+      question:
+        description: 'Описание вопроса'
+        test_id: 'Выбор теста'
+      answer:
+        body: 'Описание'
+        correct: 'Да'
+
 
   tests:
       index:
@@ -54,6 +69,7 @@ ru:
       test:
         start: 'Начать'
 
+
   shared:
     menu:
       welcome: 'Приветствую Вас в приложении TestGuru'
@@ -64,16 +80,104 @@ ru:
       sure: 'Вы уверены?'
       welcome: 'Приветствую!'
 
+
   admin:
+
+    answers:
+      create:
+        success: 'Вопрос успешно создан'
+      update:
+        success: 'Вопрос успешно обновлен'
+      destroy:
+        success: 'Вопрос успешно удален'
+      answer:
+        show: 'Просмотр'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+        confirm: 'Вы уверены?'
+      edit:
+        show: 'Просмотр'
+        back: 'К вопросу'
+        header: 'Редактирование ответа'
+      show:
+        correct: 'Да'
+        answer: 'Ответ'
+        back: 'К вопросу'
+        question: 'Вопрос'
+      new:
+        back: 'К вопросу'
+        header: 'Создать ответ'
+
+    questions:
+      create:
+        successes: 'Вопрос успешно создан'
+      update:
+        successes: 'Вопрос успешно обновлен'
+      destroy:
+        successes: 'Вопрос успешно удален'
+      new:
+        header_create: 'Создание вопроса для теста: %{title}'
+      edit:
+        header_edit: 'Редактирование вопроса теста %{title} Question'
+        show: 'Просмотр'
+        back: 'Тесты'
+      show:
+        edit: 'Редактировать вопрос'
+        new: 'Создать ответ'
+        back: 'К тестам'
+        question: 'Вопрос:'
+        answer: 'Ответ:'
+        header: 'Просмотр вопроса %{title}'
+      question:
+        edit: 'Редактировать'
+        show: 'Просмотр'
+        destroy: 'Удалить'
+        confirm: 'Вы уверены?'
+
+    categories:
+      edit:
+        edit: 'Редактирование категории'
+        back: 'Тесты'
+      show:
+        header: 'Просмотр категории'
+        edit: 'Редактировать'
+        back: 'Тесты'
+        title: 'Категория'
+      new:
+        header: 'Создание новой категории'
+      create:
+        success: 'Категория успешно создана'
+      update:
+        success: 'Категория успешно обновлена'
+      destroy:
+        success: 'Категория успешно удалена'
+
     menu:
       admin_panel: 'Административная панель приложения TestGuru'
       start: 'Пройти тесты'
       logout: 'Выйти'
       sure: 'Вы уверены?'
       admin_welcome: 'Здравствуйте администратор:'
+
     tests:
+      show:
+        header: 'Просмотр теста %{title}'
+        new: 'Создать вопрос'
+        edit: 'Редактировать тест'
+        back: 'Все тесты'
+        title: 'Название:'
+        level: 'Сложность:'
+        author: 'Автор:'
+        category: 'Категория:'
+        all_test: 'Тестовые вопросы:'
+        description: 'Описание:'
+        action: 'Действия:'
       create:
         successes: 'Тест успешно создан'
+      update:
+        successes: 'Тест успешно обновлен'
+      destroy:
+        successes: 'Тест успешно удален'
       index:
         author: 'Автор'
         title: 'Название'
@@ -82,12 +186,13 @@ ru:
         category: 'Категория'
         total_question: 'Количество вопросов'
         actions: 'Действия'
+        new_category: 'Создать новую категорию'
         new_test: 'Создать новый тест'
       test:
         delete: 'удалить'
         show: 'просмотреть'
         update: 'обновить'
         sure: 'Вы уверены?'
-      show:
+
 
 

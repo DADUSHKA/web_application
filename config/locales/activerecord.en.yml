@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    model:
+      category: 'Category'
+      test: 'Test'
+      question: 'Question'
+      answer: 'Answer'
