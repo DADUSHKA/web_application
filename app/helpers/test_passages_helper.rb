@@ -1,5 +1,4 @@
 module TestPassagesHelper
-
   TEST_THRESHOLD = 85
 
   def result_message(test_passage)
@@ -17,5 +16,4 @@ module TestPassagesHelper
       'red'
     end
   end
-
 end

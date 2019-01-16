@@ -15,21 +15,22 @@ class TestPassage < ApplicationRecord
   end
 
   def success_rate
-    ((correct_questions.to_f / test.questions.count)*100).to_i
+    ((correct_questions.to_f / test.questions.count) * 100).to_i
   end
 
   def indicator_number_question(test_passage)
-    test_passage.test.questions.test_questions.order(id: :asc).index(self.question) + 1
+    test_passage.test.questions.test_questions.order(id: :asc).index(question) + 1
   end
 
   private
 
   def before_validation_set_and_next_question
-    if question_id != nil
-      self.question = test.questions.order(:id).where('id > ?', question.id).first
-    else
-      self.question = test.questions.first
-    end
+    self.question =
+      if !question_id.nil?
+        test.questions.order(:id).where('id > ?', question.id).first
+      else
+        test.questions.first
+      end
   end
 
   def correct_answer?(answer_ids)
@@ -41,5 +42,5 @@ class TestPassage < ApplicationRecord
   def correct_answers
     question.answers.correct
   end
-
 end
+

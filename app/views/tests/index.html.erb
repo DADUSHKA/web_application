@@ -1,7 +1,9 @@
 <div id="container">
   <div id="header">TestGuru</div>
   <div id="sidebar">
-    <%= link_to 'New tests', new_test_path %>
+<% if current_user.admin_status? %>
+  <%= link_to 'AdminPanel',  admin_tests_path %>
+<% end %>
   </div>
   <div id="content">
     <h2>Tricky Tests</h2>
@@ -12,7 +14,6 @@
       <th>Author</th>
       <th>Category</th>
       <th>Total questions</th>
-    <th colspan="4">Actions</th>
     </tr>
     <%= render @tests %>
     </table>

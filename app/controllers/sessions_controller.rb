@@ -1,21 +1,10 @@
-class SessionsController < ApplicationController
-  def new;end
+# frozen_string_literal: true
+
+class SessionsController < Devise::SessionsController
 
   def create
-    user = User.find_by(email: params[:email])
-    if user&.authenticate(params[:password])
-      log_in user
-      redirect_back_or tests_path
-    else
-      flash.now[:alert] = 'Invalid email/password combination'
-      render :new
-    end
-  end
-
-  def destroy
-    session.delete(:user_id)
-    @current_user = nil
-    redirect_to root_path
+    super
+    flash[:notice] = "Welcome back, #{current_user.first_name}!" if is_flashing_format?
   end
 
 end

@@ -1,0 +1,12 @@
+<div id="container">
+  <div id="header">TestGuru</div>
+  <div id="sidebar">
+    <%= link_to 'New Question', new_admin_test_question_path(@test) %>
+    <%= link_to 'Show', admin_test_path %> |
+    <%= link_to 'Back', admin_tests_path(@test) %>
+  </div>
+  <div id="content">
+  <h2>Edit <%= @test.title %> test</h2>
+    <%= render 'form', test: @test %>
+  </div>
+</div>

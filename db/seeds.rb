@@ -8,24 +8,41 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 [User, Category, Test, Question, Answer].each(&:delete_all)
-# . . .
+
 users = User.create!(
-  [{ name: 'Vasia',
+  [{ first_name: 'Vasia',
+     password: '111111',
+     last_name: 'Pupkin',
      admin_status: true,
      email: 'mail@mail.com',
-     password_digest: 'qwertywww' },
-   { name: 'Pit',
-     admin_status: false,
-     email: 'mail@mail.ru',
-     password_digest: '12345wwww' },
-   { name: 'Bob',
-     admin_status: false,
-     email: 'bob@mail.com',
-     password_digest: 'afdfe333f' },
-   { name: 'Sandy',
+     encrypted_password: '111111',
+     created_at: '2019-01-11 10:21:00.970122',
+     updated_at: '2019-01-11 10:26:10.209860',
+     sign_in_count: '2',
+     current_sign_in_at: '2019-01-11 10:26:10.203857' ,
+     last_sign_in_at: '2019-01-11 10:21:10.059776' ,
+     last_sign_in_ip: '127.0.0.1' ,
+     confirmation_token: 'HbYz-9Cym891JGqnM8KF'
+     confirmed_at: '2019-01-11 10:21:04.271154' ,
+     confirmation_sent_at: '2019-01-11 10:21:00.970924' ,
+     current_sign_in_ip: '127.0.0.1'
+      },
+   { first_name: 'Sandy',
+     password: '111111',
      admin_status: false,
      email: 'sandy@mail.com',
-     password_digest: 'q3we9rty' }]
+     encrypted_password: '111111',
+     created_at: '2019-01-11 10:21:00.970122',
+     updated_at: '2019-01-11 10:26:10.209860',
+     sign_in_count: '2',
+     current_sign_in_at: '2019-01-11 10:26:10.203857' ,
+     last_sign_in_at: '2019-01-11 10:21:10.059776' ,
+     last_sign_in_ip: '127.0.0.1' ,
+     confirmation_token: 'HbYz-9Cym891JGqnM8KF'
+     confirmed_at: '2019-01-11 10:21:04.271154' ,
+     confirmation_sent_at: '2019-01-11 10:21:00.970924' ,
+     current_sign_in_ip: '127.0.0.1'
+      }]
 )
 categories = Category.create!(
   [{ title: 'Sport' },
@@ -49,7 +66,7 @@ tests = Test.create!(
      level: 1, author: users[0],
      category: categories[2] },
    { title: 'Knowledge of italiano cuisine',
-     level: 2, author: users[1],
+     level: 2, author: users[0],
      category: categories[1] }]
 )
 questions = Question.create!(
@@ -92,9 +109,9 @@ Answer.create!(
    { question: questions[10] },
    { question: questions[11] }]
 )
-# TestsUser.create!(
-#   [{ user: users[1], test: tests[1], finality: true },
-#    { user: users[2], test: tests[0], finality: true },
-#    { user: users[1], test: tests[0], finality: false },
-#    { user: users[1], test: tests[2], finality: true }]
-# )
+TestsUser.create!(
+  [{ user: users[1], test: tests[1], finality: true },
+   { user: users[2], test: tests[0], finality: true },
+   { user: users[1], test: tests[0], finality: false },
+   { user: users[1], test: tests[2], finality: true }]
+)
