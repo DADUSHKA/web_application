@@ -2,41 +2,37 @@
 <div id="container">
   <div id="header">TestGuru</div>
   <div id="sidebar">
-    <%= link_to 'New Question', new_admin_test_question_path(@test.id) %>
-    <%= link_to 'Edit', edit_admin_test_path(@test) %> |
-    <%= link_to 'Back', admin_tests_path %>
+    <%= link_to t('.new'), new_admin_test_question_path(@test.id) %>
+    <p></p>
+    <%= link_to t('.edit'), edit_admin_test_path(@test) %>
+    <p></p>
+    <%= link_to t('.back'), admin_tests_path %>
   </div>
   <div id="content">
-    <h2>Show <%= @test.title %> test</h2>
+    <h2><%= t('.header', title: @test.title) %></h2>
     <p>
       <strong>Id:</strong>
       <%= @test.id %>
     </p>
-    <p>
-      <strong>Test:</strong>
-      <%= @test.title %>
-    </p>
-    <p>
-      <strong>Level:</strong>
+      <strong><%= t('.level') %></strong>
       <%= level_test(@test) %>
     </p>
     <p>
-      <strong>Author:</strong>
+      <strong><%= t('.author') %></strong>
       <%= @test.author.last_name %>
     </p>
     <p>
-      <strong>Category:</strong>
+      <strong><%= t('.category') %></strong>
       <%= @test.category.title %>
     </p>
     <p>
-      <strong>All test questions:</strong>
+      <strong><%= t('.all_test') %></strong>
       <table>
         <tr>
-          <th>Description</th>
-          <th colspan="3">Actions</th>
+          <th><%= t('.description') %></th>
+          <th colspan="3"><%= t('.action') %></th>
         </tr>
         <%= render @test.questions %>
-        <%#= render partial: 'questions/question', collection: @test.questions %>
       </table>
     </p>
   </div>

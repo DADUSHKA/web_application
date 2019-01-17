@@ -2,7 +2,7 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 
 Metrics/LineLength:
-  Max: 120
+  Max: 200
 
 Style/Documentation:
   Enabled: false
@@ -27,6 +27,24 @@ Lint/Void:
 
 Metrics/CyclomaticComplexity:
   Max: 20
+
+Layout/IndentationWidth:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Layout/IndentationConsistency:
+  Enabled: false
+
+Style/TernaryParentheses:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/MixinUsage:
+  Enabled: false
 
 
 

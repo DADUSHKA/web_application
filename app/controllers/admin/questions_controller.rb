@@ -8,7 +8,7 @@ class Admin::QuestionsController < Admin::AdminController
 
   def update
     if @question.update(question_params)
-      redirect_to @question, notice: 'Question was successfully updated.'
+      redirect_to admin_test_path, notice: t('.successes')
     else
       render :edit
     end
@@ -23,7 +23,7 @@ class Admin::QuestionsController < Admin::AdminController
   def create
     @question = @test.questions.new(question_params)
     if @question.save
-      redirect_to admin_test_path(@test), notice: 'Question was successfully created.'
+      redirect_to admin_test_path(@test), notice: t('.successes')
     else
       render :new
     end
@@ -31,7 +31,7 @@ class Admin::QuestionsController < Admin::AdminController
 
   def destroy
     @question.destroy
-    redirect_to tests_path, notice: 'Question was successfully destroyed.'
+    redirect_to tests_path, notice: t('.successes')
   end
 
   private

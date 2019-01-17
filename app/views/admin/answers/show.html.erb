@@ -1,23 +1,20 @@
 <div id="container">
   <div id="header">TestGuru</div>
   <div id="sidebar">
-<%= link_to 'Back', admin_question_path(@answer.question) %>
+    <%= link_to t('.back'), admin_question_path(@answer.question) %>
   </div>
   <div id="content">
-  <h2>Question</h2>
+  <h2><%= t('.question') %></h2>
     <p>
     <strong><%= @answer.question.description %></strong>
-
     </p>
     <p>
-    <strong>Answer:</strong>
- <%= @answer.body %>
+    <strong><%= t('.answer') %></strong>
+      <%= @answer.body %>
     </p>
     <p>
-    <strong>Correct:</strong>
-
-<%= @answer.correct %>
-
+    <strong><%= t('.correct') %></strong>
+      <%= @answer.correct %>
     </p>
   </div>
 </div>

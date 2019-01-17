@@ -1,33 +1,201 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+
+  tests_mailer:
+    completed_test:
+      subject: 'You just completed the TestGuru test!'
+
+  test_passages:
+    result:
+      back: 'Back to tests'
+      result: 'Test result:'
+      header_was: "The %{title} Test was Completed."
+      header_no: "The %{title} Test no Completed."
+
+    show:
+      number: 'Number question'
+      count: 'Count questions this test'
+      next: 'Next'
+      header: 'Passing  %{title} the test '
+      question: 'Question:'
+
+  shared:
+    errors:
+      header:
+        one: '%{count} error detected'
+        other: '%{count} errors detected'
+
+  devise:
+    confirmations:
+      new:
+        header: 'Resend confirmation instructions'
+        confirmation: 'Resend confirmation instructions'
+    sessions:
+      new:
+        login: 'Log in'
+        header: 'Enter the Guru Gates'
+        password: 'Password'
+        remember_me: 'Remember_me'
+    registrations:
+      new:
+        header: 'Become the Guru!'
+        registr: 'Sign up'
+        first_name: 'First_name'
+        last_name: 'Last_name'
+        password: 'Password'
+        password_confirmation: 'Password_confirmation'
+        minimum: 'characters minimum'
+
+  tests:
+    index:
+      header: 'TrickyTests'
+      level: 'Level'
+      category: 'Category'
+      total_question: 'Total questions'
+      author: 'Author'
+      title: 'Title'
+    test:
+      start: 'Start'
+
+  helpers:
+    label:
+      test:
+        title: 'Title'
+        level: 'Level'
+        category_id: 'Category'
+      category:
+        title: 'Title'
+      question:
+        description: 'Description'
+      answer:
+        body: 'Description'
+        correct: 'Yes'
+
+  shared:
+    menu:
+      welcome: 'Welcome on aplication TestGuru'
+      signup: 'Sign in'
+      login: 'Log in'
+      start: 'Start Tests'
+      logout: 'Log out'
+      sure: 'Are you sure?'
+      welcome: 'Welcome!'
+
+  admin:
+    answers:
+      create:
+        success: 'Answer was successfully created.'
+      update:
+        success: 'Answer was successfully updated.'
+      destroy:
+        success: 'Answer was successfully destroyed.'
+      answer:
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'
+        confirm: 'Are you sure?'
+      edit:
+        show: 'Show'
+        back: 'Back'
+        header: 'Editing Answer'
+      show:
+        correct: 'Correct'
+        answer: 'Answer'
+        back: 'Back to question'
+        question: 'Question'
+      new:
+        back: 'Back'
+        header: 'New answer'
+
+    questions:
+      create:
+        successes: 'Question was successfully created.'
+      update:
+        successes: 'Question was successfully updated.'
+      destroy:
+        successes: 'Question was successfully destroyed.'
+      new:
+        header_create: 'Create New %{title} Question'
+      edit:
+        header_edit: 'Editing %{title} Question'
+        show: 'Show'
+        back: 'Back'
+      show:
+        edit: 'Edit'
+        new: 'New answer'
+        back: 'Back to test'
+        question: 'Question'
+        answer: 'Answer'
+        header: 'Show %{title} Question'
+      question:
+        edit: 'Edit'
+        show: 'Show'
+        destroy: 'Destroy'
+        confirm: 'Are you sure?'
+
+    categories:
+      edit:
+        edit: 'Edit category'
+        back: 'Back to test'
+      show:
+        header: 'Show Category'
+        edit: 'Edit'
+        back: 'Back to test'
+        title: 'Category'
+      new:
+        header: 'Createn new category'
+      create:
+        success: 'Category was successfully created.'
+      update:
+        success: 'Category was successfully updated.'
+      destroy:
+        success: 'Category was successfully destroyed.'
+
+    menu:
+      admin_panel: 'AdminPanel aplication TestGuru'
+      start: 'Start Tests'
+      logout: 'Log out'
+      admin_welcome: ' Welcome administrator:'
+
+    tests:
+      show:
+        header: 'Show %{title} test '
+        new: 'New Question'
+        edit: 'Edit'
+        back: 'Back'
+        title: 'Tests:'
+        level: 'Level:'
+        author: 'Author:'
+        category: 'Category:'
+        all_test: 'All test questions:'
+        description: 'Description:'
+        action: 'Actions:'
+      create:
+        successes: 'Test was successfully created.'
+      update:
+        successes: 'Test was successfully updated.'
+      destroy:
+        successes: 'Test was successfully destroyed.'
+      index:
+        header: 'TrickyTests'
+        level: 'Level'
+        category: 'Category'
+        total_question: 'Total questions'
+        author: 'Author'
+        title: 'Title'
+        actions: 'Actions'
+        new_category: New Category'
+        new_test: 'New test'
+      test:
+        delete: 'destroy'
+        show: 'show'
+        update: 'edit'
+        sure: 'Are you sure?'
+      new:
+        back: 'Back'
+        header: 'Create New Test'
+      edit:
+        new: 'New Question'
+        show: 'Show'
+        back: 'Back'
+        title: 'Edit %{title} test'

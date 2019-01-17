@@ -43,4 +43,3 @@ class TestPassage < ApplicationRecord
     question.answers.correct
   end
 end
-

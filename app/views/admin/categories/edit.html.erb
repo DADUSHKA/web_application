@@ -1,0 +1,10 @@
+<div id="container">
+  <div id="header">TestGuru</div>
+  <div id="sidebar">
+    <%= link_to t('.back'), admin_tests_path %>
+  </div>
+  <div id="content">
+    <h2><%= t('.edit') %></h2>
+    <%= render 'form', category: @category %>
+  </div>
+</div>

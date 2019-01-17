@@ -1,24 +1,24 @@
 <div id="container">
   <div id="header">TestGuru</div>
   <div id="sidebar">
-    <%= link_to 'Edit', edit_admin_question_path(@question) %><br><br>
-    <%= link_to 'Back to test', admin_test_path(@question.test) %><br><br>
-    <%= link_to "New answer", new_admin_question_answer_path(@question) %>
+    <%= link_to t('.edit'), edit_admin_question_path(@question) %><br><br>
+    <%= link_to t('.back'), admin_test_path(@question.test) %><br><br>
+    <%= link_to t('.new'), new_admin_question_answer_path(@question) %>
   </div>
   <div id="content">
-  <h2>Show <%= @question.test.title %>  Question </h2>
+  <h2><%= t('.header', title: @question.test.title) %></h2>
     <p>
     <strong>Id:</strong>
-    <%= @question.id %>
+      <%= @question.id %>
     </p>
     <p>
-    <strong>Question:</strong>
-    <%= @question.description %>
+    <strong><%= t('.question') %></strong>
+      <%= @question.description %>
     </p>
     <p>
-    <strong>Answer:</strong>
+    <strong><%= t('.answer') %></strong>
     <ol>
-    <%= render @question.answers %>
+      <%= render @question.answers %>
     </ol>
     </p>
   </div>

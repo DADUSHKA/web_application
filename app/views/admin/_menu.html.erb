@@ -1,11 +1,13 @@
 <nav class="top-menu-admin">
-  <ul class="menu"><h1>AdminPanel aplication TestGuru</h1></ul>
+  <ul class="menu"><h1><%= t('.admin_panel') %></h1></ul>
   <ul class="menu-main">
     <li></li>
-    Welcome administrator
+    <%= t('.admin_welcome') %>
     <li><%= link_to"#{current_user.last_name}", root_path %></li>
-    <li><%= link_to 'Start Tests', tests_path %></li>
-    <li><%= link_to 'Log out',  destroy_user_session_path(session),
-        method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <li><%= link_to t('.start'), tests_path %></li>
+    <li><%= link_to t('.logout'),  destroy_user_session_path(session),
+        method: :delete, data: { confirm: t('.sure') } %></li>
   </ul>
+    <li><%= link_to 'En', { lang: :en } %></li>
+    <li><%= link_to 'Ru', { lang: :ru } %></li>
 </nav>

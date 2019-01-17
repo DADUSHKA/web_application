@@ -1,5 +1,5 @@
 <tr>
-  <td><%= question.description %></td>
+  <td><%= category.title %></td>
   <td><%= link_to t('.show'),admin_question_path(question) %></td>
   <td><%= link_to t('.edit'), edit_admin_question_path(question) %></td>
   <td><%= link_to t('.destroy'),admin_question_path(question), method: :delete, data: { confirm: t('.confirm') } %></td>

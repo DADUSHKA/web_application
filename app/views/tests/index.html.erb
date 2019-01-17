@@ -2,18 +2,18 @@
   <div id="header">TestGuru</div>
   <div id="sidebar">
 <% if current_user.admin_status? %>
-  <%= link_to 'AdminPanel',  admin_tests_path %>
+  <%= link_to t('.adminpanel'),  admin_tests_path %>
 <% end %>
   </div>
   <div id="content">
-    <h2>Tricky Tests</h2>
+    <h2><%= t('.header') %></h2>
     <table>
     <tr>
-      <th>Title</th>
-      <th>Level</th>
-      <th>Author</th>
-      <th>Category</th>
-      <th>Total questions</th>
+     <th><%= t('.title') %></th>
+      <th><%= t('.level') %></th>
+      <th><%= t('.author') %></th>
+      <th><%= t('.category') %></th>
+      <th><%= t('.total_question') %></th>
     </tr>
     <%= render @tests %>
     </table>
