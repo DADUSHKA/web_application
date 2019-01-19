@@ -1,3 +1,49 @@
+<nav class="navbar navbar-light bg-dark">
+  <span class="navbar-brand mb-0 h1 book"><%= t('.admin_panel') %></span>
+  <ul class="nav justify-content-end">
+    <% if user_signed_in?  %>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><%= link_to t('.admin_welcome') %></a>&nbsp;&nbsp;
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"><%= link_to t('.start'), tests_path %></a>&nbsp;&nbsp;
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><%= link_to t('.logout'),  destroy_user_session_path(session), method: :delete, data: { confirm: t('.sure') } %></a>&nbsp;&nbsp;
+    </li>
+    <% else %>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><%= link_to t('.signup'),  new_user_registration_path %></a>&nbsp;&nbsp;
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><%= link_to t('.login'),  new_user_session_path %></a>&nbsp;&nbsp;
+    </li>
+    <% end %>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#"><%= link_to 'En', { lang: :en } %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#"><%= link_to 'Ru', { lang: :ru } %></a>
+    </li>
+  </ul>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <nav class="top-menu-admin">
   <ul class="menu"><h1><%= t('.admin_panel') %></h1></ul>
   <ul class="menu-main">
@@ -11,3 +57,4 @@
     <li><%= link_to 'En', { lang: :en } %></li>
     <li><%= link_to 'Ru', { lang: :ru } %></li>
 </nav>
+ -->

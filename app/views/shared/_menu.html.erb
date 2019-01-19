@@ -1,17 +1,42 @@
-<nav class="top-menu">
-  <ul class="menu"><h1><%= t('.welcome') %></h1></ul>
-  <ul class="menu-main">
-    <li></li>
-    <% if user_signed_in?  %>
-      <li><%= t('.welcome') %> <%= first_name %> <%= last_name %></li>
-      <li><%= link_to t('.start'), tests_path %></li>
-      <li><%= link_to t('.logout'),  destroy_user_session_path(session),
-         method: :delete, data: { confirm: t('.sure') } %></li>
-    <% else %>
-      <li><%= link_to t('.signup'),  new_user_registration_path %></li>
-      <li><%= link_to t('.login'),  new_user_session_path %></li>
+<nav class="navbar navbar-light bg-dark">
+  <span class="navbar-brand mb-0 h1"><%= link_to t('.welcome'), root_path %></span>
+  <span class="navbar-brand mb-0 h1">
+    <% if user_signed_in? %>
+    <% if current_user.admin_status? %>
+    <%= link_to t('.adminpanel'),  admin_tests_path %>
     <% end %>
-       <li><%= link_to 'En', { lang: :en } %></li>
-       <li><%= link_to 'Ru', { lang: :ru } %></li>
-  </ul>
-</nav>
+    <% end %>
+  </span>
+  <ul class="nav justify-content-end">
+    <% if user_signed_in?  %>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><%= link_to first_name %>
+        <%= link_to last_name %></a>&nbsp;&nbsp;&nbsp;&nbsp;
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><%= link_to t('.start'),
+        tests_path %></a>&nbsp;&nbsp;
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><%= link_to t('.logout'),
+        destroy_user_session_path(session), method: :delete,
+        data: { confirm: t('.sure') } %></a>&nbsp;&nbsp;
+      </li>
+      <% else %>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><%= link_to t('.signup'),
+        new_user_registration_path %></a>&nbsp;&nbsp;
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><%= link_to t('.login'),
+        new_user_session_path %></a>&nbsp;&nbsp;
+      </li>
+      <% end %>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#"><%= link_to 'En', { lang: :en } %></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#"><%= link_to 'Ru', { lang: :ru } %></a>
+      </li>
+    </ul>
+  </nav>

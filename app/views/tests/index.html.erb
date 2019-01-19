@@ -1,9 +1,6 @@
 <div id="container">
   <div id="header">TestGuru</div>
   <div id="sidebar">
-<% if current_user.admin_status? %>
-  <%= link_to t('.adminpanel'),  admin_tests_path %>
-<% end %>
   </div>
   <div id="content">
     <h2><%= t('.header') %></h2>

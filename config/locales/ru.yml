@@ -38,6 +38,7 @@ ru:
         password: 'Пароль'
         login: 'Войти'
         header: 'Вход в приложение TestGuru '
+        please: 'Пожалуйста войдите'
     registrations:
       new:
         header: 'Станьте гуру!'
@@ -47,6 +48,9 @@ ru:
         password: 'Пароль'
         password_confirmation: 'Подтвердить пароль'
         minimum: 'символов минимум'
+        please: 'Пожалуйста зарегистрируйтесь'
+
+
 
     shared:
       links:
@@ -92,7 +96,8 @@ ru:
       start: 'Пройти тесты'
       logout: 'Выйти'
       sure: 'Вы уверены?'
-      welcome: 'Приветствую!'
+      welcome: 'TestGuru'
+      adminpanel: 'Админпанель'
 
   admin:
     answers:
