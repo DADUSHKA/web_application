@@ -10,4 +10,13 @@ module ApplicationHelper
   def thinknetica_url
     link_to 'Thinknetica', 'http://www.thinknetica.com/', target: :_blank
   end
+
+  def flash_class(level)
+    case level
+      when :notice then "alert alert-info"
+      when :success then "alert alert-success"
+      when :error then "alert alert-error"
+      when :alert then "alert alert-error"
+    end
+  end
 end
