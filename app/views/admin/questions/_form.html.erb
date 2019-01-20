@@ -1,16 +1,12 @@
-<%= form_with model: [:admin, @test, @question] do |form| %>
-<%= render "shared/errors", resource: @question %>
-  <p>
-    <%= form.label :description %><br>
-    <%= form.text_field :description, id: :question_description, :cols => 50 %>
-  </p>
-  <% if @question.test != nil %>
-  <p>
-    <%= form.label :test_id %><br>
-    <%= form.collection_select :test_id, Test.all, :id, :title, prompt: true %>
-  </p>
+<div class="container text-center">
+  <%= bootstrap_form_with model: [:admin, @test, @question] do |form| %>
+    <%= render "shared/errors", resource: @question %>
+    <%= form.text_field :description, id: :question_description,
+      :cols => 50, class: "form-control" %>
+    <% if @question.test != nil %>
+      <%= form.collection_select :test_id, Test.all, :id, :title,
+        prompt: true, class: "form-control" %>
+    <% end %>
+      <%= form.submit class: "btn btn-info" %>
   <% end %>
-  <p class="actions">
-    <%= form.submit %>
-  </p>
-<% end %>
+</div>

@@ -1,28 +1,38 @@
-<div id="container">
-  <div id="header">TestGuru</div>
-<div id="sidebar">
-    <p> <%= t('.number') %></p>
-    <%=  @test_passage.indicator_number_question(@test_passage)  %></br>
-    <p> <%= t('.count') %></p>
-    <%=  @test_passage.test.questions.count %></br>
-  </div>
-  <div id="content">
+<nav class="navbar navbar-light" style="background-color: #e3f2fd">
+  <span class="navbar-brand mb-0 h1">TestGuru</span>
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+     <%= t('.number') %>:&nbsp;
+     <%=  @test_passage.indicator_number_question(@test_passage)  %></br>
+   </li>&nbsp;&nbsp;&nbsp;&nbsp;
+   <li class="nav-item">
+     <%= t('.count') %>:&nbsp;
+     <%=  @test_passage.test.questions.count %></br>
+   </li>
+ </ul>
+</nav>
+<div class="container">
+  <div class="row mb-2">
+   <div class="col-6 col-md-4">
+   </div>
+   <div class="col-12 col-md-8">
     <h2><%= t('.header', title: @test_passage.test.title) %></h2>
-    <p>
-      <h2><%= t('.question') %></h2>
-      <strong><%= @test_passage.question.description %></strong>
-    </p>
-    <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form|  %>
-    <%= form.collection_check_boxes :answer_ids, @test_passage.question.answers, :id, :body, include_hidden: false do |b| %>
-    <p>
-      <%= b.check_box id: "answer_ids_#{b.object.id}"  %>
-      <%= b.label  %>
-    </p>
-    <% end  %>
-    <p>
-      <%= form.submit t('.next')  %>
-    </p>
-    <% end %>
- </div>
+    <h2><%= t('.question') %>
+      <%= @test_passage.question.description %>
+      <%= bootstrap_form_with url: test_passage_path(@test_passage),
+      local: true, method: :put do |form|  %>
+      <%= form.collection_check_boxes :answer_ids, @test_passage.question.answers,
+      :id, :body, include_hidden: false do |b| %>
+      <p>
+        <%= b.check_box id: "answer_ids_#{b.object.id}", class: "form-check-input"  %>
+        <%= b.label  class: "form-check-input"  %>
+      </p>
+      <% end  %>
+      <p>
+        <%= form.submit t('.next'), class: "btn btn-info"  %>
+      </p>
+      <% end %>
+    </div>
+  </div>
 </div>
 

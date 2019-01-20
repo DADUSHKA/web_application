@@ -1,14 +1,11 @@
-<div class="container">
-  <div id="header">TestGuru</div>
-  <div class="sidebar">
-    <%= link_to t('.back'), admin_tests_path(@test) %>
-  </div>
-  <div class="content">
-    <h2><%= t('.header') %></h2>
-    <%= render 'form', test: @test %>
-  </div>
-</div>
-
+<nav class="navbar navbar-light" style="background-color: #e3f2fd">
+<span class="navbar-brand mb-0 h1">TestGuru</span>
+<ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link" href="#"><%= link_to t('.back'), admin_tests_path(@test) %></a>
+  </li>
+</ul>
+</nav>
 <div class="container">
   <div class="row mb-2">
     <div class="col-md-6">
