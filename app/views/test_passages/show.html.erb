@@ -29,6 +29,7 @@
       </p>
       <% end  %>
       <p>
+        <%= link_to "Gist Questions", gist_test_passage_path(@test_passage), method: :post %>
         <%= form.submit t('.next'), class: "btn btn-info"  %>
       </p>
       <% end %>

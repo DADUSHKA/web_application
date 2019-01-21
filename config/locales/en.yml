@@ -11,6 +11,9 @@ en:
       result: 'Test result:'
       header_was: "The %{title} Test was Completed."
       header_no: "The %{title} Test no Completed."
+    gist:
+      success: 'Gist successfully saved'
+      failure: 'An error occurred while saving gist'
 
     show:
       number: 'Number question'
