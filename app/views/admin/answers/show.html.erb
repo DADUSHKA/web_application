@@ -1,20 +1,33 @@
-<div id="container">
-  <div id="header">TestGuru</div>
-  <div id="sidebar">
-    <%= link_to t('.back'), admin_question_path(@answer.question) %>
+<nav class="navbar navbar-light" style="background-color: #e3f2fd">
+  <span class="navbar-brand mb-0 h1">TestGuru</span>
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+     <%= link_to t('.back'), admin_question_path(@answer.question) %>
+   </li>
+ </ul>
+</nav>
+<div class="container">
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="card flex-md-row mb-4 box-shadow h-md-250">
+        <div class="card-body d-flex flex-column align-items-start">
+          <h2><%= t('.question') %></h2>
+          <p>
+            <strong><%= @answer.question.description %></strong>
+          </p>
+          <p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+          <div class="card-body d-flex flex-column align-items-start">
+            <h2><%= t('.answer') %></h2>
+              <%= @answer.body %>
+            <h3><%= t('.correct') %></h3>
+              <%= @answer.correct %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div id="content">
-  <h2><%= t('.question') %></h2>
-    <p>
-    <strong><%= @answer.question.description %></strong>
-    </p>
-    <p>
-    <strong><%= t('.answer') %></strong>
-      <%= @answer.body %>
-    </p>
-    <p>
-    <strong><%= t('.correct') %></strong>
-      <%= @answer.correct %>
-    </p>
-  </div>
-</div>

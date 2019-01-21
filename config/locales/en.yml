@@ -36,6 +36,7 @@ en:
         header: 'Enter the Guru Gates'
         password: 'Password'
         remember_me: 'Remember_me'
+        please: 'Please log in'
     registrations:
       new:
         header: 'Become the Guru!'
@@ -45,6 +46,7 @@ en:
         password: 'Password'
         password_confirmation: 'Password_confirmation'
         minimum: 'characters minimum'
+        please: 'Please sign in'
 
   tests:
     index:
@@ -79,7 +81,7 @@ en:
       start: 'Start Tests'
       logout: 'Log out'
       sure: 'Are you sure?'
-      welcome: 'Welcome!'
+      welcome: 'TestGuru'
 
   admin:
     answers:

@@ -1,10 +1,7 @@
-<%= form_with model: [:admin, @category] do |form| %>
-<%= render "shared/errors", resource: @category %>
- <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title, id: :test_title %>
-</p>
-  <p class="actions">
-    <%= form.submit %>
-  </p>
-<% end %>
+<div class="container text-center">
+  <%= bootstrap_form_with model: [:admin, @category] do |form| %>
+    <%= render "shared/errors", resource: @category %>
+    <%= form.text_field :title, id: :test_title, class: "form-control" %>
+    <%= form.submit class: "btn btn-info" %>
+  <% end %>
+</div>
