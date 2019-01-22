@@ -155,6 +155,8 @@ en:
         success: 'Category was successfully updated.'
       destroy:
         success: 'Category was successfully destroyed.'
+      category:
+        confirm: 'Are you sure?'
 
     menu:
       admin_panel: 'AdminPanel aplication TestGuru'

@@ -171,6 +171,9 @@ ru:
         success: 'Категория успешно обновлена'
       destroy:
         success: 'Категория успешно удалена'
+      category:
+        confirm: 'Вы уверены?'
+
 
     menu:
       admin_panel: 'Административная панель приложения TestGuru'

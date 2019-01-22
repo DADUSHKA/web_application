@@ -28,7 +28,7 @@ class Admin::CategoriesController < ApplicationController
 
   def destroy
     @category.destroy
-    redirect_to tests_path, notice: t('.success')
+    redirect_to admin_tests_path, notice: t('.success')
   end
 
   private
