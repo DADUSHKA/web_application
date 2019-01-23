@@ -1,5 +1,7 @@
 <nav class="navbar navbar-light bg-dark">
-  <span class="navbar-brand mb-0 h1 book"><%= link_to t('.admin_panel'), root_path %></span>
+  <span class="navbar-brand mb-0 h1 book">
+    <%= link_to t('.admin_panel'), root_path %>
+  </span>
   <ul class="nav justify-content-end">
     <% if user_signed_in?  %>
       <li class="nav-item">

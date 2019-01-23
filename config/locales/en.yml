@@ -1,6 +1,10 @@
 en:
   hello: "Hello world"
 
+  services:
+    gist_question_service:
+      message:
+
   tests_mailer:
     completed_test:
       subject: 'You just completed the TestGuru test!'

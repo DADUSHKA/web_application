@@ -1,13 +1,12 @@
 class User < ApplicationRecord
-  devise :database_authenticatable,
-         :registerable,
-         :recoverable,
-         :rememberable,
-         :confirmable,
-         :trackable,
-         :validatable
+  scope :by_id, ->(user_id) { find(user_id) }
+
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :confirmable,
+         :trackable, :validatable
 
   has_many :test_passages
+  has_many :gist, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :author_tests, class_name: 'Test', foreign_key: 'author_id'
 

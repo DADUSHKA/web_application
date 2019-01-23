@@ -1,6 +1,10 @@
 ru:
   hello: "Привет Мир!"
 
+  services:
+    gist_question_service:
+      message: "Вопрос о %{title} от TestGuru!"
+
   tests_mailer:
     completed_test:
       subject: 'Вы только что завершили TestGuru!'

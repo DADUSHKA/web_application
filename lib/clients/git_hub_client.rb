@@ -1,6 +1,5 @@
 class GitHubClient
-
-  ROOT_ANDPOINT = 'https://api.github.com'
+  ROOT_ANDPOINT = 'https://api.github.com'.freeze
 
   def initialize
     @http_client = setup_http_client
@@ -19,5 +18,4 @@ class GitHubClient
   def setup_http_client
     Faraday.new(url: ROOT_ANDPOINT)
   end
-
 end

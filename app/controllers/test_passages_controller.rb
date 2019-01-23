@@ -7,13 +7,20 @@ class TestPassagesController < ApplicationController
   def result; end
 
   def gist
-    result = GistQuestionService.new(@test_passage.question).call
-    flash_options = if result.success?
-      { notce: t(:success) }
+    if current_user.token.nil?
+      redirect_to tests_path
     else
-      { alert: t(:fuilure) }
+      result = GistQuestionService.new(@test_passage.question, current_user.token).call
+      Gist.new.entry_in_the_table(@test_passage.question.description,
+                                  result[:files][:test_guru_question_test][:raw_url], current_user.id)
+      flash[:notice] = if result.success?
+        'An error occurred while creating Gist'
+                       else
+       "Gist created. #{view_context.link_to('Click this link',
+                                             (result[:git_pull_url]).to_s, target: :_blank)}"
+                       end
+      redirect_to @test_passage
     end
-    redirect_to @test_passage, flash_options
   end
 
   def update
