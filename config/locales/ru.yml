@@ -16,7 +16,7 @@ ru:
       header_was: "Тест %{title} успешно пройден."
       header_no: "Тест %{title} не пройден."
     gist:
-      success: 'Gist успешно сохранён'
+      success: 'Gist успешно сохранён %{title}'
       failure: 'Во время сохранения gist произошла ошибка'
 
     show:
