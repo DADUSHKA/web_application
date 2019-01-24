@@ -28,11 +28,12 @@ ActiveRecord::Schema.define(version: 20_190_122_120_820) do
   end
 
   create_table 'gists', force: :cascade do |t|
-    t.string 'question'
+    t.integer 'question_id'
     t.string 'gist_url'
     t.integer 'user_id'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.index ['question_id'], name: 'index_gists_on_question_id'
     t.index ['user_id'], name: 'index_gists_on_user_id'
   end
 
@@ -87,7 +88,6 @@ ActiveRecord::Schema.define(version: 20_190_122_120_820) do
     t.datetime 'confirmed_at'
     t.datetime 'confirmation_sent_at'
     t.string 'unconfirmed_email'
-    t.string 'token'
     t.index ['confirmation_token'], name: 'index_users_on_confirmation_token', unique: true
     t.index ['email'], name: 'index_users_on_email', unique: true
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true

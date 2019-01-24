@@ -183,10 +183,13 @@ en:
         action: 'Actions:'
       create:
         successes: 'Test was successfully created.'
+        misstake: 'Something went wrong.'
       update:
         successes: 'Test was successfully updated.'
+        misstake: 'Something went wrong.'
       destroy:
         successes: 'Test was successfully destroyed.'
+        misstake: 'Something went wrong.'
       index:
         header: 'TrickyTests'
         level: 'Level'

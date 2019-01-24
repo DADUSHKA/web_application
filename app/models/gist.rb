@@ -1,7 +1,6 @@
 class Gist < ApplicationRecord
- scope :gists, -> { all }
-
   belongs_to :user
+  belongs_to :question
 
   def entry_in_the_table(question, gist_url, user_id)
     self.question = question

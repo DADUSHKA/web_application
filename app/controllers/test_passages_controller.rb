@@ -7,10 +7,7 @@ class TestPassagesController < ApplicationController
   def result; end
 
   def gist
-    if current_user.token.nil?
-      redirect_to tests_path
-    else
-      result = GistQuestionService.new(@test_passage.question, current_user.token).call
+      result = GistQuestionService.new(@test_passage.question).call
       Gist.new.entry_in_the_table(@test_passage.question.description,
                                   result[:files][:test_guru_question_test][:raw_url], current_user.id)
       flash[:notice] = if result.success?
@@ -20,7 +17,6 @@ class TestPassagesController < ApplicationController
                                              (result[:git_pull_url]).to_s, target: :_blank)}"
                        end
       redirect_to @test_passage
-    end
   end
 
   def update

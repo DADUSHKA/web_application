@@ -201,10 +201,13 @@ ru:
         action: 'Действия:'
       create:
         successes: 'Тест успешно создан'
+        misstake: 'Что-то пошло не так'
       update:
         successes: 'Тест успешно обновлен'
+        misstake: 'Что-то пошло не так'
       destroy:
         successes: 'Тест успешно удален'
+        misstake: 'Что-то пошло не так.'
       index:
         author: 'Автор'
         title: 'Название'

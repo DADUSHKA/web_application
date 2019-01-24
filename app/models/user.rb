@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  scope :by_id, ->(user_id) { find(user_id) }
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :confirmable,
          :trackable, :validatable
