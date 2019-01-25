@@ -1,6 +1,12 @@
 en:
   hello: "Hello world"
 
+  gist_question_service:
+    gist_params:
+      descript: 'A question about %{title} from TestGuru!'
+
+
+
   services:
     gist_question_service:
       message:
@@ -213,3 +219,10 @@ en:
         show: 'Show'
         back: 'Back'
         title: 'Edit %{title} test'
+    gists:
+      index:
+        tests: 'Tests'
+        question: 'Question'
+        email: 'Email user`s'
+        url: 'Gist URL'
+

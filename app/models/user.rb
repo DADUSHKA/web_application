@@ -4,7 +4,7 @@ class User < ApplicationRecord
          :trackable, :validatable
 
   has_many :test_passages
-  has_many :gist, dependent: :destroy
+  has_many :gists, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :author_tests, class_name: 'Test', foreign_key: 'author_id'
 

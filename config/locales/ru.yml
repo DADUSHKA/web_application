@@ -1,6 +1,10 @@
 ru:
   hello: "Привет Мир!"
 
+  gist_question_service:
+    gist_params:
+      descript: 'Вопрос о %{title} от TestGuru!'
+
   services:
     gist_question_service:
       message: "Вопрос о %{title} от TestGuru!"
@@ -231,6 +235,12 @@ ru:
         show: 'Смортеть тест'
         back: 'К тестам'
         title: 'Редактировать тест %{title}'
+    gists:
+      index:
+        tests: 'К тестам'
+        question: 'Вопрос'
+        email: 'Email пользователей'
+        url: 'Gist URL'
 
 
 

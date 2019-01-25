@@ -3,7 +3,7 @@ class Question < ApplicationRecord
 
   has_many :answers, dependent: :delete_all
   belongs_to :test
-  has_many :gist
+  has_many :gists
 
   validates :description, presence: true, length: { maximum: 250 }
 end

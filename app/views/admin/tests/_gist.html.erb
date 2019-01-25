@@ -1,7 +1,0 @@
-<% Gist.all.each do|data| %>
-  <tr>
-    <td><%= link_to data.question.description, admin_question_path(data.question) %></td>
-    <td><%= data.user.email %></td>
-    <td><%= link_to 'gist_url', data.gist_url %></td>
-  </tr>
-<% end %>
