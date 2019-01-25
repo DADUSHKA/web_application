@@ -8,7 +8,7 @@ class TestPassagesController < ApplicationController
 
   def gist
       result = GistQuestionService.new(@test_passage.question).call
-      flash[:notice] = if result.success?
+      flash[:notice] = if result.empty?
         t('.failure')
                        else
 
