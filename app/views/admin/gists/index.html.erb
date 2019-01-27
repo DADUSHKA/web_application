@@ -20,13 +20,7 @@
             </tr>
           </thead>
           <tbody>
-           <% @gists.each do |data| %>
-            <tr>
-              <td><%= link_to data.question.description.slice(0..25), admin_question_path(data.question) %></td>
-              <td><%= data.user.email %></td>
-              <td><%= link_to 'gist_url', data.gist_url %></td>
-            </tr>
-           <% end %>
+           <%= render @gists %>
          </tbody>
        </table>
      </div>
