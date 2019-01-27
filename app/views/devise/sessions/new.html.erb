@@ -2,6 +2,8 @@
   <h1><%= t('.header') %></h1>
   <h1 class="h3 mb-3 font-weight-normal"><%= t('.please') %></h1>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+   <%= devise_error_messages! %>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>

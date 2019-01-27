@@ -7,7 +7,7 @@ class Test < ApplicationRecord
   scope :medium_tests, -> { by_level(2..4) }
   scope :complicated_tests, -> { by_level(5..1 / 0.0) }
 
-  has_many :questions, dependent: :delete_all
+  has_many :questions, dependent: :destroy
   has_many :test_passages
   has_many :users, through: :test_passages
   belongs_to :category

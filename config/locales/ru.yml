@@ -1,6 +1,14 @@
 ru:
   hello: "Привет Мир!"
 
+  gist_question_service:
+    gist_params:
+      descript: 'Вопрос о %{title} от TestGuru!'
+
+  services:
+    gist_question_service:
+      message: "Вопрос о %{title} от TestGuru!"
+
   tests_mailer:
     completed_test:
       subject: 'Вы только что завершили TestGuru!'
@@ -11,6 +19,9 @@ ru:
       result: 'Результат прохождения теста:'
       header_was: "Тест %{title} успешно пройден."
       header_no: "Тест %{title} не пройден."
+    gist:
+      success: 'Gist успешно сохранён %{title}'
+      failure: 'Во время сохранения gist произошла ошибка'
 
     show:
       number: 'Номер вопроса'
@@ -168,6 +179,9 @@ ru:
         success: 'Категория успешно обновлена'
       destroy:
         success: 'Категория успешно удалена'
+      category:
+        confirm: 'Вы уверены?'
+
 
     menu:
       admin_panel: 'Административная панель приложения TestGuru'
@@ -191,10 +205,13 @@ ru:
         action: 'Действия:'
       create:
         successes: 'Тест успешно создан'
+        misstake: 'Что-то пошло не так'
       update:
         successes: 'Тест успешно обновлен'
+        misstake: 'Что-то пошло не так'
       destroy:
         successes: 'Тест успешно удален'
+        misstake: 'Что-то пошло не так.'
       index:
         author: 'Автор'
         title: 'Название'
@@ -218,6 +235,12 @@ ru:
         show: 'Смортеть тест'
         back: 'К тестам'
         title: 'Редактировать тест %{title}'
+    gists:
+      index:
+        tests: 'К тестам'
+        question: 'Вопрос'
+        email: 'Email пользователей'
+        url: 'Gist URL'
 
 
 

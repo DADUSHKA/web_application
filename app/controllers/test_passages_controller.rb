@@ -1,10 +1,26 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_test_passage, only: %i[show result update]
+  before_action :set_test_passage, only: %i[show result update gist]
 
   def show; end
 
   def result; end
+
+  def gist
+      result = GistQuestionService.new(@test_passage.question).call
+      flash[:notice] = if result.empty?
+        t('.failure')
+                       else
+
+       t('.success', title: " #{view_context.link_to('Click this link',
+                                                    (result[:git_pull_url]).to_s, target: :_blank)}")
+                       end
+      current_user.gists.create(question_id: @test_passage.question.id,
+       gist_url: result[:files][:test_guru_question_test][:raw_url],
+       user_id: current_user.id)
+
+      redirect_to @test_passage
+  end
 
   def update
     @test_passage.accept!(params[:answer_ids])

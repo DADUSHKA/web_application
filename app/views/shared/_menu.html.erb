@@ -10,8 +10,8 @@
   <ul class="nav justify-content-end">
     <% if user_signed_in?  %>
     <li class="nav-item">
-      <a class="nav-link" href="#"><%= link_to first_name %>
-        <%= link_to last_name %></a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="nav-link" href="#"><%= link_to current_user.first_name %>
+        <%= link_to current_user.last_name %></a>&nbsp;&nbsp;&nbsp;&nbsp;
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#"><%= link_to t('.start'),

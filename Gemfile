@@ -34,7 +34,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.2.1'
 gem 'bootstrap_form', '>= 4.1.0'
 gem 'devise', '~> 4.0'
+gem 'faraday'
 gem 'jquery-rails'
+gem 'octokit', '~> 4.0'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -45,8 +48,10 @@ gem 'jquery-rails'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
+  gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'guard-rubocop'
 end
 
 group :development do
@@ -54,6 +59,9 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'guard'
+  gem 'guard-bundler', require: false
+  gem 'guard-rails'
   gem 'letter_opener'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

@@ -21,7 +21,7 @@ class Admin::TestsController < Admin::AdminController
     if @test.save
       redirect_to admin_test_path(@test), notice: t('.successes')
     else
-      render :new
+      render :new, notice: t('.misstake')
     end
   end
 
@@ -29,7 +29,7 @@ class Admin::TestsController < Admin::AdminController
     if @test.update(test_params)
       redirect_to admin_test_path(@test), notice: t('.successes')
     else
-      render :edit
+      render :edit, notice: t('.misstake')
     end
   end
 

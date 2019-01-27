@@ -1,6 +1,16 @@
 en:
   hello: "Hello world"
 
+  gist_question_service:
+    gist_params:
+      descript: 'A question about %{title} from TestGuru!'
+
+
+
+  services:
+    gist_question_service:
+      message:
+
   tests_mailer:
     completed_test:
       subject: 'You just completed the TestGuru test!'
@@ -11,6 +21,9 @@ en:
       result: 'Test result:'
       header_was: "The %{title} Test was Completed."
       header_no: "The %{title} Test no Completed."
+    gist:
+      success: 'Gist successfully saved. %{title}'
+      failure: 'An error occurred while saving gist'
 
     show:
       number: 'Number question'
@@ -152,6 +165,8 @@ en:
         success: 'Category was successfully updated.'
       destroy:
         success: 'Category was successfully destroyed.'
+      category:
+        confirm: 'Are you sure?'
 
     menu:
       admin_panel: 'AdminPanel aplication TestGuru'
@@ -174,10 +189,13 @@ en:
         action: 'Actions:'
       create:
         successes: 'Test was successfully created.'
+        misstake: 'Something went wrong.'
       update:
         successes: 'Test was successfully updated.'
+        misstake: 'Something went wrong.'
       destroy:
         successes: 'Test was successfully destroyed.'
+        misstake: 'Something went wrong.'
       index:
         header: 'TrickyTests'
         level: 'Level'
@@ -201,3 +219,10 @@ en:
         show: 'Show'
         back: 'Back'
         title: 'Edit %{title} test'
+    gists:
+      index:
+        tests: 'Tests'
+        question: 'Question'
+        email: 'Email user`s'
+        url: 'Gist URL'
+

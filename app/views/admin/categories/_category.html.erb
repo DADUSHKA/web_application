@@ -1,6 +1,7 @@
 <tr>
   <td><%= category.title %></td>
-  <td><%= link_to t('.show'),admin_question_path(question) %></td>
-  <td><%= link_to t('.edit'), edit_admin_question_path(question) %></td>
-  <td><%= link_to t('.destroy'),admin_question_path(question), method: :delete, data: { confirm: t('.confirm') } %></td>
+  <td><%= link_to t('.show'),admin_category_path(category) %></td>
+  <td><%= link_to t('.edit'), edit_admin_category_path(category) %></td>
+  <td><%= link_to t('.destroy'),admin_category_path(category),
+   method: :delete, data: { confirm: t('.confirm') } %></td>
 </tr>
