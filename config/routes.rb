@@ -20,7 +20,6 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    #get 'gists/index'
    resources :gists, only: [:index]
    resources :categories, shallow: true, except: :index
    resources :tests, except: %i[start] do
