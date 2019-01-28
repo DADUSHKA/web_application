@@ -12,17 +12,19 @@
   <table class="table table-striped table-sm">
     <thead>
       <tr>
-        <tr>
-         <th><%= t('.title') %></th>
-         <th><%= t('.level') %></th>
-         <th><%= t('.author') %></th>
-         <th><%= t('.category') %></th>
-         <th><%= t('.total_question') %></th>
-       </tr>
-     </tr>
-   </thead>
-   <tbody>
-    <%= render @tests %>
-  </tbody>
-</table>
+        <th class="sort-by-title pointer">
+          <%= t('.title') %>
+          <%= octicon 'arrow-up', class: 'text-success hide' %>
+          <%= octicon 'arrow-down', class: 'text-success hide' %>
+        </th>
+        <th><%= t('.level') %></th>
+        <th><%= t('.author') %></th>
+        <th><%= t('.category') %></th>
+        <th><%= t('.total_question') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @tests %>
+    </tbody>
+  </table>
 </div>
