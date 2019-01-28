@@ -1,7 +1,6 @@
- <% @gists.each do |data| %>
    <tr>
-    <td><%= link_to data.question.description.slice(0..25), admin_question_path(data.question) %></td>
-    <td><%= data.user.email %></td>
-    <td><%= link_to 'gist_url', data.gist_url %></td>
+    <td><%= link_to gist.question.description.slice(0..25), admin_question_path(gist.question) %></td>
+    <td><%= gist.user.email %></td>
+    <td><%= link_to 'gist_url', gist.gist_url %></td>
   </tr>
-<% end %>
+
