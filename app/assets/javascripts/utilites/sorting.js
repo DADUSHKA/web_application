@@ -1,20 +1,7 @@
 document.addEventListener('turbolinks:load', function () {
   var control = document.querySelector('.sort-by-title')
   if (control) {control.addEventListener('click', sortRowsByTitle)}
-
-    var password = document.querySelector('#user_password_confirmation')
-  if (password) {password.addEventListener('input', validPasswd)}
 })
-
-function validPasswd() {
-  var password1 = document.getElementById("user_password")
-  var password2 = document.getElementById("user_password_confirmation")
-  if(password1.value != password2.value) {
-    document.getElementById("user_password_confirmation").style.backgroundColor = "red"
-  } else {
-    document.getElementById("user_password_confirmation").style.backgroundColor = "green"
-  }
-}
 
 function sortRowsByTitle() {
   var table = document.querySelector('table')
