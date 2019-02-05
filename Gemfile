@@ -36,8 +36,8 @@ gem 'bootstrap_form', '>= 4.1.0'
 gem 'devise', '~> 4.0'
 gem 'faraday'
 gem 'jquery-rails'
-gem 'octokit', '~> 4.0'
 gem 'octicons_helper'
+gem 'octokit', '~> 4.0'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -52,8 +52,8 @@ group :development, :test do
   gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'guard-rubocop'
   gem 'dotenv-rails'
+  gem 'guard-rubocop'
 end
 
 group :development do
