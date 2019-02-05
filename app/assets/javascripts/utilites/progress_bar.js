@@ -5,9 +5,9 @@ document.addEventListener("turbolinks:load", function(){
     let number = document.querySelector('.nuber-question').dataset.nuberQuestion
     let numbers = document.querySelector('.all-question').dataset.allQuestion
 
-    let division = Math.round(100 / numbers)
-    let progressDivision =  Math.round(number * division)
+    let progressDivision =  Math.round(number * 100 / numbers)
 
     document.querySelector('#progressBar').value = controllScroll + progressDivision
   }
 })
+
