@@ -8,15 +8,15 @@ document.addEventListener("turbolinks:load", function() {
 function validPasswd() {
   var password1 = document.getElementById("user_password");
   var password2 = document.getElementById("user_password_confirmation");
+
   if (password1.value != password2.value) {
-    if (password2.value.length > 0) {
-      document.getElementById(
-        "user_password_confirmation"
-      ).style.backgroundColor = "red";
-    }
+   password2.style.backgroundColor = "red";
   } else {
-    document.getElementById(
-      "user_password_confirmation"
-    ).style.backgroundColor = "green";
+    password2.style.backgroundColor = "green";
+  }
+
+  if (password2.value.length == 0) {
+    password2.style.backgroundColor = '#fff';
   }
 }
+
