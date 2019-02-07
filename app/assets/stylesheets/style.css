@@ -149,7 +149,7 @@ body {
 .flash.notice{
   border-color: #3c85e0;
 }
-#error_explanation{
+.error_explanation{
   border: 2px solid;
   border-color: #ef2727;
   border-radius: 5px;
@@ -217,7 +217,7 @@ div {
   display: table;
 }
 
-#error_explanation {
+.error-explanation {
   width: 450px;
   border: 2px solid red;
   padding: 7px 7px 0;

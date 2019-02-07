@@ -2,16 +2,25 @@
   <span class="navbar-brand mb-0 h1">TestGuru</span>
   <ul class="nav justify-content-end">
     <li class="nav-item">
+      <p>Индикатор выполнения теста:</p>
+    </li>&nbsp;
+    <li class="nav-item my-progressBar">
+      <progress value="0" max="100" id="progressBar"></progress>
+    </li>&nbsp;&nbsp;&nbsp;&nbsp;
+    <li class="nav-item">
      <%= t('.number') %>:&nbsp;
-     <%=  @test_passage.indicator_number_question(@test_passage)  %></br>
-   </li>&nbsp;&nbsp;&nbsp;&nbsp;
-   <li class="nav-item">
-     <%= t('.count') %>:&nbsp;
-     <%=  @test_passage.test.questions.count %></br>
-   </li>
- </ul>
-</nav>
-<div class="container">
+     <%= content_tag :span, @test_passage.indicator_number_question(@test_passage),
+     class: 'nuber-question',
+       data: { nuber_question: @test_passage.indicator_number_question(@test_passage) } %></br>
+     </li>&nbsp;&nbsp;&nbsp;&nbsp;
+     <li class="nav-item">
+       <%= t('.count') %>:&nbsp;
+       <%= content_tag :span, @test_passage.test.questions.count,
+       class: 'all-question', data: { all_question: @test_passage.test.questions.count } %></br>
+     </li>
+   </ul>
+ </nav>
+ <div class="container">
   <div class="row mb-2">
    <div class="col-6 col-md-4">
    </div>
@@ -30,7 +39,7 @@
       <% end  %>
       <p>
         <%= link_to "Gist Questions", gist_test_passage_path(@test_passage), method: :post %>
-        <%= form.submit t('.next'), class: "btn btn-info"  %>
+        <%= form.submit t('.next'), class: "btn btn-info", id: "ButtonRunBar"  %>
       </p>
       <% end %>
     </div>

@@ -1,11 +1,10 @@
 class Admin::TestsController < Admin::AdminController
-  before_action :set_test, only: %i[show edit update destroy start]
+  before_action :set_tests, only: %i[index update_inline]
+  before_action :set_test, only: %i[show edit update destroy start update_inline]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_from_test_not_found
 
-  def index
-    @tests = Test.all
-  end
+  def index;  end
 
   def show; end
 
@@ -27,9 +26,17 @@ class Admin::TestsController < Admin::AdminController
 
   def update
     if @test.update(test_params)
-      redirect_to admin_test_path(@test), notice: t('.successes')
+      redirect_to [:admin, @test], notice: t('.successes')
     else
       render :edit, notice: t('.misstake')
+    end
+  end
+
+  def update_inline
+    if @test.update(test_params)
+      redirect_to admin_tests_path, notice: t('.successes')
+    else
+      render :index, notice: t('.misstake')
     end
   end
 
@@ -47,6 +54,10 @@ class Admin::TestsController < Admin::AdminController
 
   def test_params
     params.require(:test).permit(:title, :level, :category_id)
+  end
+
+  def set_tests
+    @tests = Test.all
   end
 
   def set_test
