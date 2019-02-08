@@ -4,23 +4,24 @@
   </span>
   <ul class="nav justify-content-end">
     <% if user_signed_in?  %>
-      <li class="nav-item" style="color: #e3f2fd">
+    <li class="nav-item" style="color: #e3f2fd">
       <%=  t('.admin_welcome')%> <%= current_user.first_name %>&nbsp;<%=current_user.last_name %>&nbsp;&nbsp;
-      </li>
-      <li class="nav-item">
+    </li>
+    <li class="nav-item">
       <%= link_to t('.start'), tests_path %>&nbsp;&nbsp;
-      </li>
-      <li class="nav-item">
-      <%= link_to t('.logout'),  destroy_user_session_path(session),
-         method: :delete, data: { confirm: t(' .sure') } %>&nbsp;&nbsp;
-      </li>
+    </li>
+    <li class="nav-item">
+      <%= link_to t('.logout'),
+      destroy_user_session_path(session), method: :delete,
+      data: { confirm: t('.suure') } %>&nbsp;&nbsp;
+    </li>
     <% else %>
-      <li class="nav-item">
+    <li class="nav-item">
       <%= link_to t('.signup'),  new_user_registration_path %>&nbsp;&nbsp;
-      </li>
-      <li class="nav-item">
+    </li>
+    <li class="nav-item">
       <%= link_to t('.login'),  new_user_session_path %>&nbsp;&nbsp;
-      </li>
+    </li>
     <% end %>
     <li class="nav-item">
       <%= link_to 'En', { lang: :en } %>

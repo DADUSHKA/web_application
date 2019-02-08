@@ -172,6 +172,7 @@ en:
       admin_panel: 'AdminPanel aplication TestGuru'
       start: 'Start Tests'
       logout: 'Log out'
+      suure: 'Are you sure?'
       admin_welcome: ' Welcome administrator:'
 
     tests:

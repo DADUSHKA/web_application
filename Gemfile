@@ -39,7 +39,7 @@ gem 'faraday'
 gem 'jquery-rails'
 gem 'octicons_helper'
 gem 'octokit', '~> 4.0'
-
+gem 'contact_us', '~> 1.0.1'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
