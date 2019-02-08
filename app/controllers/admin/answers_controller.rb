@@ -29,7 +29,7 @@ class Admin::AnswersController < Admin::AdminController
 
   def destroy
     @answer.destroy
-    redirect_to admin_tests_path, notice: t('.success')
+    redirect_to admin_question_path(@question), notice: t('.success')
   end
 
   private

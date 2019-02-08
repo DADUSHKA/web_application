@@ -22,7 +22,7 @@ users = User.create!(
      current_sign_in_at: '2019-01-11 10:26:10.203857' ,
      last_sign_in_at: '2019-01-11 10:21:10.059776' ,
      last_sign_in_ip: '127.0.0.1' ,
-     confirmation_token: 'HbYz-9Cym891JGqnM8KF'
+     confirmation_token: 'HbYz-9Cym891JGqnM8KF',
      confirmed_at: '2019-01-11 10:21:04.271154' ,
      confirmation_sent_at: '2019-01-11 10:21:00.970924' ,
      current_sign_in_ip: '127.0.0.1'
@@ -38,7 +38,7 @@ users = User.create!(
      current_sign_in_at: '2019-01-11 10:26:10.203857' ,
      last_sign_in_at: '2019-01-11 10:21:10.059776' ,
      last_sign_in_ip: '127.0.0.1' ,
-     confirmation_token: 'HbYz-9Cym891JGqnM8KF'
+     confirmation_token: 'HbYz-9Cym891JGqnM8pF',
      confirmed_at: '2019-01-11 10:21:04.271154' ,
      confirmation_sent_at: '2019-01-11 10:21:00.970924' ,
      current_sign_in_ip: '127.0.0.1'
@@ -109,9 +109,5 @@ Answer.create!(
    { question: questions[10] },
    { question: questions[11] }]
 )
-TestsUser.create!(
-  [{ user: users[1], test: tests[1], finality: true },
-   { user: users[2], test: tests[0], finality: true },
-   { user: users[1], test: tests[0], finality: false },
-   { user: users[1], test: tests[2], finality: true }]
-)
+
+

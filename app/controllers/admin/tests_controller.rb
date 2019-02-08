@@ -42,7 +42,7 @@ class Admin::TestsController < Admin::AdminController
 
   def destroy
     @test.destroy
-    redirect_to tests_path, notice: t('.successes')
+    redirect_to admin_tests_path, notice: t('.successes')
   end
 
   def start

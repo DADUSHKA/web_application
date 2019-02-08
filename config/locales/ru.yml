@@ -27,7 +27,7 @@ ru:
       number: 'Номер вопроса'
       count: 'Количество вопросов в тесте'
       next: 'Следующий'
-      header: 'Прохождение теста:  %{title}'
+      header: 'Прохождение теста:   " %{title}"'
       question: 'Вопрос:'
 
   shared:
@@ -152,7 +152,7 @@ ru:
       show:
         edit: 'Редактировать вопрос'
         new: 'Создать ответ'
-        back: 'К тестам'
+        back: 'К тесту'
         question: 'Вопрос:'
         answer: 'Ответ:'
         header: 'Просмотр вопроса %{title}'
@@ -192,7 +192,7 @@ ru:
 
     tests:
       show:
-        header: 'Просмотр теста %{title}'
+        header: '%{title}'
         new: 'Создать вопрос'
         edit: 'Редактировать тест'
         back: 'Все тесты'
@@ -207,6 +207,9 @@ ru:
         successes: 'Тест успешно создан'
         misstake: 'Что-то пошло не так'
       update:
+        successes: 'Тест успешно обновлен'
+        misstake: 'Что-то пошло не так'
+      update_inline:
         successes: 'Тест успешно обновлен'
         misstake: 'Что-то пошло не так'
       destroy:

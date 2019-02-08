@@ -8,7 +8,7 @@ class Admin::QuestionsController < Admin::AdminController
 
   def update
     if @question.update(question_params)
-      redirect_to admin_test_path, notice: t('.successes')
+      redirect_to admin_question_path, notice: t('.successes')
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class Admin::QuestionsController < Admin::AdminController
 
   def destroy
     @question.destroy
-    redirect_to tests_path, notice: t('.successes')
+    redirect_to admin_test_path(@test), notice: t('.successes')
   end
 
   private

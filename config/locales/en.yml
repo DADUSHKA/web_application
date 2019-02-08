@@ -193,6 +193,9 @@ en:
       update:
         successes: 'Test was successfully updated.'
         misstake: 'Something went wrong.'
+      update_inline:
+        successes: 'Test was successfully updated.'
+        misstake: 'Something went wrong.'
       destroy:
         successes: 'Test was successfully destroyed.'
         misstake: 'Something went wrong.'

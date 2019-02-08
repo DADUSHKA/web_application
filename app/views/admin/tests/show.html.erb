@@ -2,13 +2,13 @@
   <span class="navbar-brand mb-0 h1">TestGuru</span>
   <ul class="nav justify-content-end">
     <li class="nav-item">
-      <a class="nav-link" href="#"><%= link_to t('.new'), new_admin_test_question_path(@test.id) %></a>
+      <h5><%= link_to t('.new'), new_admin_test_question_path(@test.id) %></h5>
+    </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <li class="nav-item">
+      <%= link_to t('.edit'), edit_admin_test_path(@test) %>
     </li>&nbsp;&nbsp;
     <li class="nav-item">
-      <a class="nav-link" href="#"> <%= link_to t('.edit'), edit_admin_test_path(@test) %></a>
-    </li>&nbsp;&nbsp;
-    <li class="nav-item">
-      <a class="nav-link" href="#"><%= link_to t('.back'), admin_tests_path %></a>
+      <%= link_to t('.back'), admin_tests_path %>
     </li>
   </ul>
 </nav>
