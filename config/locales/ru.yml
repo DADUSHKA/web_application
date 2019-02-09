@@ -244,6 +244,9 @@ ru:
         question: 'Вопрос'
         email: 'Email пользователей'
         url: 'Gist URL'
+      gist:
+        sure: 'Вы уверены?'
+        delete: 'Удалить'
 
 
 

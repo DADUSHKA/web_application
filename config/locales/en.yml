@@ -229,4 +229,7 @@ en:
         question: 'Question'
         email: 'Email user`s'
         url: 'Gist URL'
+      gist:
+        sure: 'Are you sure?'
+        delete: 'Delete'
 

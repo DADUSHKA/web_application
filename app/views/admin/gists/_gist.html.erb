@@ -2,5 +2,6 @@
     <td><%= link_to gist.question.description.slice(0..25), admin_question_path(gist.question) %></td>
     <td><%= gist.user.email %></td>
     <td><%= link_to 'gist_url', gist.gist_url %></td>
+    <td><%= link_to t('.delete'), admin_gist_path(gist), method: :delete, data: { confirm: t('.sure') } %></td>
   </tr>
 
