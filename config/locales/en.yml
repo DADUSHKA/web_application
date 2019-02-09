@@ -69,6 +69,8 @@ en:
       total_question: 'Total questions'
       author: 'Author'
       title: 'Title'
+      contact: 'contact_us'
+      contact_us: 'Contact the administration ->'
     test:
       start: 'Start'
 

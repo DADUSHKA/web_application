@@ -96,6 +96,8 @@ ru:
         category: 'Категория'
         total_question: 'Количество вопросов'
         adminpanel: 'Админпанель'
+        contact: 'Свяжитесь с нами'
+        contact_us: 'Связь с администратрацией ->'
       test:
         start: 'Начать'
 
