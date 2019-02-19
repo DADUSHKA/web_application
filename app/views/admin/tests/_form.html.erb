@@ -1,11 +1,13 @@
 <div class="container text-center">
   <%= bootstrap_form_with model: [:admin, @test], local: true do |form| %>
-    <%= render "shared/errors", resource: @test %>
-    <%= form.text_field :title, id: :test_title, class: "form-control" %>
-    <%= form.number_field :level, id: :test_level, only: ['new.html.erb'],
-      class: "form-control" %>
-    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
-    <%= form.submit  class: "btn btn-info" %>
+  <%= render "shared/errors", resource: @test %>
+  <%= form.text_field :title, id: :test_title, class: "form-control" %>
+  <%= form.number_field :level, id: :test_level, only: ['new.html.erb'],
+  class: "form-control" %>
+  <%= form.number_field :time_test, id: :test_time_test, only: ['new.html.erb'],
+  class: "form-control" %>
+  <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+  <%= form.submit  class: "btn btn-info" %>
   <% end %>
 </div>
 

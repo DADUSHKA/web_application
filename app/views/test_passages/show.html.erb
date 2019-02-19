@@ -1,6 +1,36 @@
+<div id="show_timer" class="hide" style="visibility: visible;">
+  <span id="year">
+    <%= @test_passage.created_at.strftime('%Y').to_i %>
+  </span>
+  <span id="month">
+    <%= @test_passage.created_at.strftime('%m').to_i %>
+  </span>
+  <span id="day">
+    <%= @test_passage.created_at.strftime('%d').to_i %>
+  </span>&nbsp;&nbsp;&nbsp;&nbsp;
+  <span id="hour">
+    <%= @test_passage.created_at.strftime('%k').to_i %>
+  </span>
+  <span id="minute">
+    <%= @test_passage.created_at.strftime('%M').to_i %>
+  </span>
+  <span id="second">
+    <%= @test_passage.created_at.strftime('%S').to_i %>
+  </span>&nbsp;&nbsp;&nbsp;&nbsp;
+  <span id="time_test">
+    <%= @test_passage.test.time_test %>
+  </span>
+  <span id="id">
+    <%= @test_passage.id %>
+  </span>
+</div>
 <nav class="navbar navbar-light" style="background-color: #e3f2fd">
   <span class="navbar-brand mb-0 h1">TestGuru</span>
   <ul class="nav justify-content-end">
+    <li>
+      <div id="tut"></div>
+      <span id="t" style="font-size:15px"></span>
+    </li>&nbsp;&nbsp;&nbsp;&nbsp;
     <li class="nav-item">
       <p>Индикатор выполнения теста:</p>
     </li>&nbsp;

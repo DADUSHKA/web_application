@@ -15,4 +15,5 @@ class Test < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 50 }, uniqueness: { scope: :level }
   validates :level, presence: true, numericality: { only_integer: true }
+  validates :time_test,  presence: true, numericality: { only_integer: true }
 end
