@@ -1,0 +1,9 @@
+<tr>
+  <td><%= trophy.title %></td>
+  <td><%= image_tag(trophy.image) %></td>
+  <td><%= trophy.precept %></td>
+  <td><%= link_to t('.show'),admin_trophy_path(trophy) %></td>
+  <td><%= link_to t('.edit'), edit_admin_trophy_path(trophy) %></td>
+  <td><%= link_to t('.destroy'),admin_trophy_path(trophy),
+   method: :delete, data: { confirm: t('.confirm') } %></td>
+</tr>

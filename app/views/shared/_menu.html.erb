@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light bg-dark">
-  <span class="navbar-brand mb-0 h1"><%= link_to t('.welcome'), root_path %></span>
+  <span class="navbar-brand mb-0 h1"><%= link_to t('.welcome'), tests_path %></span>
   <span class="navbar-brand mb-0 h1">
     <% if user_signed_in? %>
       <% if current_user.admin_status? %>

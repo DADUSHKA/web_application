@@ -69,10 +69,15 @@ en:
       total_question: 'Total questions'
       author: 'Author'
       title: 'Title'
-      contact: 'contact_us'
-      contact_us: 'Contact the administration ->'
+      contact: 'Contact the administration'
+      contact_us: 'Tropheis'
     test:
       start: 'Start'
+
+  trophies:
+    index:
+      tests: 'To test'
+      trophies: 'Trophies'
 
   helpers:
     label:
@@ -80,6 +85,7 @@ en:
         title: 'Title'
         level: 'Level'
         category_id: 'Category'
+        time_test: 'Time test(sec.)'
       category:
         title: 'Title'
       question:
@@ -87,6 +93,10 @@ en:
       answer:
         body: 'Description'
         correct: 'Yes'
+      trophy:
+        title: 'Title'
+        image: 'Form of a trophy'
+        precept: 'Precept'
 
   shared:
     menu:
@@ -177,6 +187,33 @@ en:
       suure: 'Are you sure?'
       admin_welcome: ' Welcome administrator:'
 
+    trophies:
+      index:
+        trophies: 'Trophies'
+        new: 'New trophy'
+        tests: 'To tests'
+        precept: 'Precepts'
+        title: 'Title'
+        image: 'Image'
+      trophy:
+        destroy: 'destroy'
+        show: 'show'
+        edit: 'edit'
+        confirm: 'Are you sure?'
+      new:
+        header: 'Create trophy'
+        back: 'Back'
+      show:
+        header: 'Show trophy'
+        back: 'Back'
+        description: 'Title'
+        descrip: 'Image'
+        des: 'Precept'
+        action: 'action'
+      edit:
+        header: 'Edit trophy'
+        back: 'BackS'
+
     tests:
       show:
         header: 'Show %{title} test '
@@ -212,6 +249,8 @@ en:
         actions: 'Actions'
         new_category: New Category'
         new_test: 'New test'
+        gists: 'Gists'
+        trophies: 'Trophies'
       test:
         delete: 'destroy'
         show: 'show'

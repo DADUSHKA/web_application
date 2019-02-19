@@ -5,6 +5,22 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_and_next_question
 
+  def count_tests_category_test_passages_all(user_test_passages)
+    Test.by_category(user_test_passages.last.test.category.title).count
+  end
+
+  def count_tests_category_test_passages_traversed(user_test_passages)
+    Test.where(test_passages: user_test_passages).by_category(user_test_passages.last.test.category.title).count
+  end
+
+  def count_tests_level_test_passages_all(user_test_passages)
+    Test.by_level(user_test_passages.last.test.level).count
+  end
+
+  def count_tests_level_test_passages_traversed(user_test_passages)
+    Test.where(test_passages: user_test_passages).where(level: user_test_passages.last.test.level).count
+  end
+
   def completed?
     question.nil?
   end

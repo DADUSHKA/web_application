@@ -2,19 +2,47 @@
   <span class="navbar-brand mb-0 h1">TestGuru</span>
   <ul class="nav justify-content-end">
     <li class="nav-item">
+    </li>
+    <li class="nav-item">
       <%= link_to t('.back'), tests_path %>
     </li>
   </ul>
 </nav>
-<div class="table-responsive">
-  <h2><%= result_message(@test_passage) %> </h2>
-  <p>
-    <h2><%= t('.result') %></h2>
+<div class="container">
+  <div class="row mb-2">
+   <div class="col-6 col-md-4">
+    <h2><%= result_message(@test_passage) %> </h2>
+    <h3><%= t('.result') %></h3>
     <h1>
       <font color="<%= selection_style(@test_passage) %>">
         <%= @test_passage.success_rate %>%
       </font>
     </h1>
-  </p>
-</div>
+  </div>
+  <div class="col-12 col-md-8">
+   <h2>Ваш трофей:</h2>
+   <% results_of_the_trophies(@test_passage, current_user.test_passages) %>
 
+   <% current_user.trophies.push(@trophy1) if @trophy1.present? %>
+   <% current_user.trophies.push(@trophy2) if @trophy2.present? %>
+   <% current_user.trophies.push(@trophy3) if @trophy3.present? %>
+
+   <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th><%= @trophy1.title if @trophy1.present? %></th>
+        <th> <%= @trophy2.title if @trophy2.present? %></th>
+        <th><%= @trophy3.title if @trophy3.present? %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> <%= image_tag(@trophy1.image) if @trophy1.present?%></td>
+        <td><%= image_tag(@trophy2.image) if @trophy2.present?%></td>
+        <td> <%= image_tag(@trophy3.image) if @trophy3.present?%></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+</div>

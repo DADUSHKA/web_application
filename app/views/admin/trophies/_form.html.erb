@@ -1,0 +1,7 @@
+<%= bootstrap_form_with model: [:admin,@trophy] do |form| %>
+    <%= render "shared/errors", resource: @trophy %>
+    <%= form.text_field :title, id: :trophy_title, class: "form-control mr-2" %>
+     <%= form.text_field :image, id: :trophy_image, class: "form-control mr-2" %>
+      <%= form.text_field :precept, id: :trophy_precept, class: "form-control mr-2" %>
+    <%= form.submit 'Ok',  class: "btn btn-outline-info btn-sm" %>
+  <% end %>

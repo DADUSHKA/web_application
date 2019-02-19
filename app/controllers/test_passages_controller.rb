@@ -4,7 +4,9 @@ class TestPassagesController < ApplicationController
 
   def show; end
 
-  def result; end
+  def result
+    @trohphies = Trophy.all
+  end
 
   def gist
       result = GistQuestionService.new(@test_passage.question).call
@@ -25,6 +27,9 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.completed?
+
+      # @test_passage.results_of_the_trophies(current_user.test_passages)
+
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else

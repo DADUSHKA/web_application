@@ -78,6 +78,7 @@ ru:
         title: 'Название'
         level: 'Сложность'
         category_id: 'Категория'
+        time_test: 'Время прохождения теста(сек.)'
       category:
         title: 'Название'
       question:
@@ -86,6 +87,11 @@ ru:
       answer:
         body: 'Описание'
         correct: 'Да'
+      trophy:
+        title: 'За что выдаётся'
+        image: 'Вид трофея'
+        precept: 'Предписаниe'
+
 
   tests:
       index:
@@ -96,10 +102,14 @@ ru:
         category: 'Категория'
         total_question: 'Количество вопросов'
         adminpanel: 'Админпанель'
-        contact: 'Свяжитесь с нами'
-        contact_us: 'Связь с администратрацией ->'
+        contact: 'Связь с администратрацией'
+        contact_us: 'Трофеи'
       test:
         start: 'Начать'
+  trophies:
+    index:
+      tests: 'К тестам'
+      trophies: 'Tрофеи'
 
   shared:
     menu:
@@ -192,6 +202,34 @@ ru:
       suure: 'Вы уверены?'
       admin_welcome: 'Здравствуйте администратор:'
 
+    trophies:
+      index:
+        trophies: 'Трофеи'
+        new: 'Создать новый'
+        tests: 'К тестам'
+        precept: 'Предписания'
+        title: 'За что'
+        image: 'Знак'
+      trophy:
+        destroy: 'удалить'
+        show: 'просмотреть'
+        edit: 'обновить'
+        confirm: 'Вы уверены?'
+
+      new:
+        header: 'Создание трофея'
+        back: 'Назад'
+      show:
+        header: 'О чем трофей'
+        back: 'Назад'
+        description: 'За что выдаётся'
+        descrip: 'Знак трофея'
+        des: 'Предписаниe'
+        action: 'действия'
+      edit:
+        header: 'Редактировать трофей'
+        back: 'Назад'
+
     tests:
       show:
         header: '%{title}'
@@ -227,6 +265,8 @@ ru:
         actions: 'Действия'
         new_category: 'Создать новую категорию'
         new_test: 'Создать новый тест'
+        gists: 'Гисты'
+        trophies: 'Tрофеи'
       test:
         delete: 'удалить'
         show: 'просмотреть'

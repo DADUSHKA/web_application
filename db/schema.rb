@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_19_092755) do
+ActiveRecord::Schema.define(version: 2019_02_19_141404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,9 +68,23 @@ ActiveRecord::Schema.define(version: 2019_02_19_092755) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"
-    t.integer "time_test"
+    t.integer "time_test", default: 0
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["title", "level"], name: "index_tests_on_title_and_level", unique: true
+  end
+
+  create_table "trophies", force: :cascade do |t|
+    t.string "title"
+    t.string "image"
+    t.string "precept"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trophies_users", id: false, force: :cascade do |t|
+    t.bigint "trophy_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["trophy_id", "user_id"], name: "index_trophies_users_on_trophy_id_and_user_id"
   end
 
   create_table "users", force: :cascade do |t|
