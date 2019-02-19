@@ -5,7 +5,7 @@
   <ul class="nav justify-content-end">
     <% if user_signed_in?  %>
     <li class="nav-item" style="color: #e3f2fd">
-      <%=  t('.admin_welcome')%> <%= current_user.first_name %>&nbsp;<%=current_user.last_name %>&nbsp;&nbsp;
+      <%= t('.admin_welcome')%> <%= current_user.full_name %>&nbsp;&nbsp;&nbsp;
     </li>
     <li class="nav-item">
       <%= link_to t('.start'), tests_path %>&nbsp;&nbsp;

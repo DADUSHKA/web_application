@@ -4,8 +4,8 @@ class Admin::GistsController < ApplicationController
   end
 
   def destroy
-    @gist = Gist.find(params[:id])
-    @gist.destroy
+    gist = Gist.find(params[:id])
+    gist.destroy
     redirect_to admin_gists_path, notice: t('.successes')
   end
 end
