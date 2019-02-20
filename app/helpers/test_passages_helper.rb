@@ -46,5 +46,3 @@ module TestPassagesHelper
    end
  end
 end
-
-
