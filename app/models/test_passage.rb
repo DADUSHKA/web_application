@@ -42,17 +42,17 @@ class TestPassage < ApplicationRecord
 
   def before_validation_set_and_next_question
     self.question =
-      if !question_id.nil?
-        test.questions.order(:id).where('id > ?', question.id).first
-      else
-        test.questions.first
-      end
+    if !question_id.nil?
+      test.questions.order(:id).where('id > ?', question.id).first
+    else
+      test.questions.first
+    end
   end
 
   def correct_answer?(answer_ids)
     correct_answers_count = correct_answers.count
     (correct_answers_count == correct_answers.where(id: answer_ids).count) &&
-      correct_answers_count == answer_ids.count
+    correct_answers_count == answer_ids.count
   end
 
   def correct_answers

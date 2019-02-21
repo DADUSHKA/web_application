@@ -18,26 +18,15 @@
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th><%= title_trophies("Level") %></th>
-              <th><%= title_trophies("Category") %></th>
-              <th><%= title_trophies("Speed") %></th>
+              <th></th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><%= showing_well_deserved_image("Level")%></td>
-              <td><%= showing_well_deserved_image("Category")%></td>
-              <td><%= showing_well_deserved_image("Speed") %></td>
-            </tr>
-            <tr>
-              <td>Count: <%= number_trophies("Level") %></td>
-              <td>Count: <%= number_trophies("Category") %></td>
-              <td>Count: <%= number_trophies("Speed") %></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+           <%= render @trophies %>
+         </tbody>
+       </table>
+     </div>
+   </div>
+ </div>

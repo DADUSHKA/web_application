@@ -11,7 +11,7 @@ document.addEventListener("turbolinks:load", function() {
   timeend = new Date(year, month, day, hour, minute, second);
   timeperiod = timeTest * 1000;
   console.log(timeperiod);
-  if (timeTest > 1) {
+  if (timeTest > 1 && new Date() != null) {
     time();
   }
 });
