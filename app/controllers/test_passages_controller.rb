@@ -27,7 +27,11 @@ end
 
 def update
   @test_passage.accept!(params[:answer_ids])
-  if @test_passage.completed?
+  if @test_passage.created_at.to_time.to_i + @test_passage.test.time_test.to_i < Time.now.to_i
+   redirect_to result_test_passage_path(@test_passage),
+   flash[:notice] = "You failed the test, #{current_user.first_name}!"
+ end
+ if @test_passage.completed?
    TestsMailer.completed_test(@test_passage).deliver_now
    redirect_to result_test_passage_path(@test_passage)
  else
@@ -41,3 +45,4 @@ def set_test_passage
   @test_passage = TestPassage.find(params[:id])
 end
 end
+
