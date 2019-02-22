@@ -1,16 +1,12 @@
 document.addEventListener("turbolinks:load", function() {
-  var year = document.getElementById("year").innerHTML;
-  var month = document.getElementById("month").innerHTML;
-  var day = document.getElementById("day").innerHTML;
-  var hour = document.getElementById("hour").innerHTML;
-  var minute = document.getElementById("minute").innerHTML;
+
   var second = document.getElementById("second").innerHTML;
   var timeTest = document.getElementById("time_test").innerHTML;
 
   timeend = new Date();
-  timeend = new Date(year, month, day, hour, minute, second);
+  timeend = new Date(second * 1000);
   timeperiod = timeTest * 1000;
-  console.log(timeperiod);
+
   if (timeTest > 1 && new Date() != null) {
     time();
   }
@@ -34,7 +30,7 @@ function time() {
 
   var id = document.getElementById("id").innerHTML;
   var str = "/test_passages/" + id + "/result";
-  console.log(str);
+
   if (tmin == "00" && tsec == "00") {
     tsec = "00";
     clearInterval(inter);
