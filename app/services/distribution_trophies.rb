@@ -1,9 +1,8 @@
 class DistributionTrophies
   TEST_THRESHOLD = 85
 
-  def initialize(test_passage, test_passage_user, user_test_passages)
+  def initialize(test_passage, user_test_passages)
     @test_passage = test_passage
-    @test_passage_user = test_passage_user
     @user_test_passages = user_test_passages
   end
 
@@ -14,7 +13,7 @@ class DistributionTrophies
       option_trophy_category(trophy) ||
       option_trophy_first_attempt(trophy)
     end
-      user_triohues(trophies)
+      user_trophues(trophies)
       trophies
   end
 
@@ -22,9 +21,9 @@ class DistributionTrophies
 private
 
 
-  def user_triohues(deserved_trophy)
+  def user_trophues(deserved_trophy)
     deserved_trophy.each do |trophy|
-      @test_passage_user.trophies.push(trophy)
+      @test_passage.user.trophies.push(trophy)
     end
   end
 

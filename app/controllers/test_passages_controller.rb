@@ -5,23 +5,24 @@ class TestPassagesController < ApplicationController
   def show; end
 
   def result
-   @trophies_issued = DistributionTrophies.new(@test_passage, @test_passage.user, current_user.test_passages)
+   @trophies_issued = DistributionTrophies.new(@test_passage, current_user.test_passages)
    @trophies = Trophy.all
   end
 
   def gist
     result = GistQuestionService.new(@test_passage.question).call
-    flash[:notice] = if result.empty?
+   flash[:notice] =
+    if result.empty?
       t('.failure')
     else
+      current_user.gists.create(
+         question_id: @test_passage.question.id,
+         gist_url: result[:files][:test_guru_question_test][:raw_url],
+         user_id: current_user.id
+     )
       t('.success', title: " #{view_context.link_to('Click this link',
         (result[:git_pull_url]).to_s, target: :_blank)}")
     end
-
-    current_user.gists.create(question_id: @test_passage.question.id,
-    gist_url: result[:files][:test_guru_question_test][:raw_url],
-    user_id: current_user.id)
-
     redirect_to @test_passage
   end
 
