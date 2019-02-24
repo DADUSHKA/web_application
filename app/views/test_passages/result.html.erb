@@ -20,35 +20,7 @@
     </h1>
   </div>
   <div class="col-12 col-md-8">
-    <table>
-     <caption><h4>Ваш трофей:</h4></caption>
-     <tr>
-       <th><%= trophy_category(@trophies_issued, @trophies).title if
-               trophy_category(@trophies_issued, @trophies).present? %></th>
-       <th><%= image_tag(trophy_category(@trophies_issued, @trophies).image) if
-                         trophy_category(@trophies_issued, @trophies).present? %></th>
-     </tr>
-     <tr>
-       <th><%= trophy_level(@trophies_issued, @trophies).title if
-               trophy_category(@trophies_issued, @trophies).present? %></th>
-       <th><%= image_tag(trophy_level(@trophies_issued, @trophies).image) if
-                         trophy_category(@trophies_issued, @trophies).present? %></th>
-     </tr>
-     <tr>
-       <th><%= trophy_speed(@trophies_issued, @trophies).title if
-               trophy_speed(@trophies_issued, @trophies).present? %></th>
-       <th><%= image_tag(trophy_speed(@trophies_issued, @trophies).image) if
-                         trophy_speed(@trophies_issued, @trophies).present? %></th>
-     </tr>
-   </table>
-
-   <% current_user.trophies.push(trophy_category(@trophies_issued, @trophies)) if
-                                 trophy_category(@trophies_issued, @trophies).present? %>
-   <% current_user.trophies.push(trophy_level(@trophies_issued, @trophies)) if
-                                 trophy_level(@trophies_issued, @trophies).present? %>
-   <% current_user.trophies.push(trophy_speed(@trophies_issued, @trophies)) if
-                                 trophy_speed(@trophies_issued, @trophies).present? %>
-
-    </div>
+    <%= render "trophies" %>
   </div>
+</div>
 </div>

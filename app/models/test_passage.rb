@@ -5,22 +5,6 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_and_next_question
 
-  def count_tests_category_test_passages_all(user_test_passages)
-    Test.by_category(user_test_passages.last.test.category.title).count
-  end
-
-  def count_tests_category_test_passages_traversed(user_test_passages)
-    Test.where(test_passages: user_test_passages).by_category(user_test_passages.last.test.category.title).count
-  end
-
-  def count_tests_level_test_passages_all(user_test_passages)
-    Test.by_level(user_test_passages.last.test.level).count
-  end
-
-  def count_tests_level_test_passages_traversed(user_test_passages)
-    Test.where(test_passages: user_test_passages).where(level: user_test_passages.last.test.level).count
-  end
-
   def completed?
     question.nil?
   end
@@ -36,6 +20,11 @@ class TestPassage < ApplicationRecord
 
   def indicator_number_question(test_passage)
     test_passage.test.questions.test_questions.order(id: :asc).index(question) + 1
+  end
+
+  def timeout?
+    created_at.to_time.to_i + test.time_test.to_i < Time.now.to_i ||
+    test.time_test.to_i == 0
   end
 
   private

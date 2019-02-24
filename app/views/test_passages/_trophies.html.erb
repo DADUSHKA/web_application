@@ -1,0 +1,10 @@
+
+<table>
+ <caption><h4>Ваш трофей:</h4></caption>
+ <%  @trophies_issued.call.each do |p| %>
+  <tr>
+    <th><%= p.title %></th>
+    <th><%= image_tag(p.image) %></th>
+  </tr>
+ <% end %>
+</table>

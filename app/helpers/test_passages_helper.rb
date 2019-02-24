@@ -17,16 +17,4 @@ module TestPassagesHelper
     end
   end
 
-  def trophy_category(trophies_issued, trophies)
-    trophies_issued.successful_completion_tests_from_category(trophies)
-  end
-
-  def trophy_level(trophies_issued, trophies)
-    trophies_issued.successful_completion_tests_certain_level(trophies)
-  end
-
-  def trophy_speed(trophies_issued, trophies)
-    trophies_issued.successful_completion_test_first_attempt(trophies)
-  end
-
 end
